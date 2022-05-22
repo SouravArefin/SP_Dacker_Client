@@ -1,38 +1,220 @@
-.App {
+.sp-style{
+  font-family: 'Times New Roman', Times, serif;
+}
+.serv-head{
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+.custom-shadow{
+  box-shadow: 4px 4px 8px rgb(189,200,213),-4px -4px 8px rgb(255,255,255);
+}
+.swiper {
+  width: 100%;
+  height: calc(100vh - 132px);
+}
+
+.swiper-slide {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-size: 18px;
+  background: #fff;
+margin-right: 0px !important;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.google-sign{
+  box-shadow: 
+  inset -10px -10px 5px rgba(255, 255, 255, 0.2),
+  inset 10px 10px 5px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  height: 100%;
+
 }
+.happy{
+margin-left: 45%;
+}
+.nav-btn::before {
+  content: '';
+  height: 0;
+  width: 0;
+  border: 2px solid transparent;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  transition: height .2s linear, width .3s linear .2s;
+}
+.bg-image::before {
+content: '';
+background-image: url('.././src/10001.png');
+background-repeat: no-repeat;
+width: 100%;
+height: 320px;
+display: block;
+position: absolute;
+top: 14%;
+}
+
+.nav-btn:hover::before {
+  height: 100%;
+  width: 100%;
+  border: 2px solid #ED1C24;
+  border-right: none;
+  border-bottom: none;
+}
+.nav-btn::after {
+  content: '';
+  height: 0;
+  width: 0;
+  border: 2px solid transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  transition: height .2s linear, width .3s linear .2s;
+}
+.nav-btn {
+text-decoration: none;
+padding: .4rem 1rem;
+position: relative;
+transition: .3s ease-in .4s;
+color: var(--secondery);
+}
+.nav-btn:hover::after {
+  height: 100%;
+  width: 100%;
+  border: 2px solid #ED1C24;
+  border-left: none;
+  border-top: none;
+}
+.active{
+  color: rgb(55, 6, 231) !important;
+}
+
+
+/* Nav item order */
+.nav-item {
+  line-height: 2.1 !important;
+}
+
+
+
+
+.hoverStyle:hover{
+     border-bottom: 1px solid red;
+}
+
+/* slider */
+/* .slider-body {
+  
+  height: 50%;
+} */
+
+/* .slider-body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  margin-top:0 !important;
+} */
+.word-spacing{
+word-spacing:20px
+}
+/* .swiper {
+  width: 100%;
+  height: 100%;
+} */
+/* 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff; */
+
+  /* Center slide text vertically */
+  /* display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.or-style{
+  display: flex;
+  align-items: center;
+  
+}
+.not{
+  margin-top:10%;
+  width:100%
+}
+.card-border{
+height:2px;
+}
+.input-field{
+  width: 100%;
+  height:100%;
+  margin:10px;
+  border-radius: 5px ;
+  border:1px solid rgb(245, 234, 234);
+  box-shadow: 4px 4px 8px rgb(189,200,213),-4px -4px 8px rgb(255,255,255);
+}
+@media screen and (max-width: 768px) {
+  nav li {
+    background-color: #424242;
+    
+    color:white;
+    
+  }
+  .li-style{
+    color:white;
+  }
+
+  .slider-body{
+    margin-top:10%;
+  }
+  .happy{
+    margin-left: 35%;
+    }
+    .item-msg{
+      font-size: 25px;
+    }
+    .form-style{
+      margin:10%
+    }
+
+}
+  
