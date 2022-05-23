@@ -72,7 +72,9 @@ display: block;
 position: absolute;
 top: 14%;
 } */
-
+.icon-color{
+  color:orangered;
+}
 .nav-btn:hover::before {
   height: 100%;
   width: 100%;

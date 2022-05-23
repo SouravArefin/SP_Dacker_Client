@@ -118,10 +118,10 @@ const Login = () => {
         if (email) {
             await sendPasswordResetEmail(email)
             // alert("check your mail for reset password...")
-            toast("check your mail for reset password...");
+            toast.success("check your mail for reset password...");
         }
         else {
-            toast('please,give us your email..')
+            toast.error('please,give us your email..')
         }
     }
 

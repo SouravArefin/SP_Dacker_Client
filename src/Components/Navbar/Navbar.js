@@ -22,7 +22,7 @@ const Navbar = () => {
 
     const logout = () => {
         signOut(auth);
-        toast('Sign-Out Success.Bye Bye!!')
+        toast.success('Sign-Out Success.Bye Bye!!')
 
         
     };
@@ -109,14 +109,14 @@ const Navbar = () => {
                                         <>
 
                                             <NavLink className="nav-btn px-3 py-2 sp-style rounded-md text-xl font-bold" to="/dashboard">DashBoard</NavLink>
-                                            <NavLink
+                                            {/* <NavLink
                                         to='/my-profile'
                                                 className="
                                         
                                         sp-style        nav-btn px-3 py-2 rounded-md text-xl font-bold"
                                     >
                                         My Profile
-                                    </NavLink>
+                                    </NavLink> */}
 
                                         </>
 
@@ -126,7 +126,10 @@ const Navbar = () => {
                                 </div>
                                 {
                                     user ?
-                                        <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
+                                        <>
+                                            <h1 className='text-primary text-l sp-style mt-2 font-bold'>{user.displayName}</h1>
+                                            <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
+                                        </>
                                         :
                                         <button className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
 
@@ -137,7 +140,11 @@ const Navbar = () => {
                         <div className="-mr-2 flex md:hidden">
                             {
                                 user ?
-                                    <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
+                                    <>
+                                        <h2 className="text-primary sp-style text-l font-bold mt-5">{user.displayName}</h2>
+                                        <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
+                                    </>
+                                   
                                     :
                                     <button className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
 
@@ -237,13 +244,13 @@ const Navbar = () => {
                                 {
                                     user &&
                                     <>
-                                        <NavLink className="text-black hover:bg-gray-700 hover:text-white block px-3  sp-style py-2 rounded-md text-base font-bold" to="/ dashboard">Dashboard</NavLink>
-                                        <NavLink
+                                        <NavLink className="text-black hover:bg-gray-700 hover:text-white block px-3  sp-style py-2 rounded-md text-base font-bold" to="/dashboard">Dashboard</NavLink>
+                                        {/* <NavLink
                                     to="/my-profile"
                                     className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
                                 >
                                     My Profile
-                                </NavLink>
+                                </NavLink> */}
                                     </>
 
 
@@ -260,6 +267,7 @@ const Navbar = () => {
                     )}
                 </Transition>
             </nav>
+           
         </div>
     );
 };

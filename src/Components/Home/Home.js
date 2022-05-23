@@ -11,6 +11,7 @@ import world from '../../world.jpg'
 import hand from '../../hand.jpg'
 import project from '../../project.jpg'
 import loader from '../../loading.gif'
+import ReviewCard from '../Review/ReviewCard';
 const Home = () => {
     const{id}=useParams()
     const [parts, setParts] = useParts()
@@ -52,12 +53,17 @@ const Home = () => {
                                     image={project}
                                 />
                             </div>
-            
+            <h1 className="text-5xl text-center text-rose-700 mt-10 sp-style">Latest Tools</h1>
             <div className='container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10'>
                             {
                                 reversedTools.slice(0, 6).map(tool => <ToolsCard handlePurchase={handlePurchase} tool={tool} key={tool._id}></ToolsCard>)
                             }
+
+                
                         </div>
+                        <h1 className="text-5xl text-center text-rose-700 mt-10 sp-style">Our Customer's Review</h1>
+
+                        <ReviewCard/>
             </div>
                     
         }

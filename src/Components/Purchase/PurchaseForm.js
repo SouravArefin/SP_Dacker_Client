@@ -8,6 +8,9 @@ import { auth } from '../../firebase.init';
 const PurchaseForm = ({ handleSubmitParam, tool, quantity }) => {
     const { register, handleSubmit, formState: { errors }, trigger, reset } = useForm();
     const [user] = useAuthState(auth);
+    const check = () => {
+        console.log('check disabled');
+    }
     return (
         <div className='w-full mx-auto custom-shadow bg-[#e8eaec] pt-10 pb-10 px-10 rounded-lg'>
             <h1 className='text-2xl md:text-3xl font-medium text-slate-500 text-center mb-10'>Purchase Form</h1>
@@ -51,7 +54,7 @@ const PurchaseForm = ({ handleSubmitParam, tool, quantity }) => {
                         {...register('address', {
                             required: 'Address is required',
                             minLength: {
-                                value: 6, message: 'Minimum 6 character required'
+                                value: 2, message: 'Minimum 2 character required'
                             }
                         })}
                         onKeyUp={() => {
@@ -79,7 +82,15 @@ const PurchaseForm = ({ handleSubmitParam, tool, quantity }) => {
 
                     <label htmlFor="floating_repeat_password" className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Contact Number</label>
                 </div>
-                <input className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2 cursor-pointer' type="submit" value="Purchase" />
+             
+
+                {
+
+              quantity ?    <input  className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2 cursor-pointer' type="submit" value="Purchase" />
+
+             :
+             <input disabled onClick={check}className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2 cursor-pointer' type="submit" value="Purchase" />
+                }
             </form>
 
         </div>
