@@ -3,6 +3,8 @@ import GetReview from './GetReview';
 
 const ReviewCard = () => {
     const [reviews, setReviews] = useState([])
+    const copyReview = [...reviews]
+    const reverseReview = copyReview?.reverse()
     useEffect(() => {
         fetch(`http://localhost:4000/reviews`)
             .then(res => res.json())
@@ -11,7 +13,7 @@ const ReviewCard = () => {
     return (
         <div data-aos="flip-up" className='ml-20 mr-20 grid grid-cols-1 md:grid-cols-3 gap-5 mt-10'>
             {
-                reviews.map(r => <GetReview
+                reverseReview?.map(r => <GetReview
                 
                     key={r._id}
                     r={r}

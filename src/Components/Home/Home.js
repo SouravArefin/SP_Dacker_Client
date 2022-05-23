@@ -61,6 +61,9 @@ const Home = () => {
 
                 
                         </div>
+                        <button  className="happy mt-10 bg-primary hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white" onClick={() => navigate('/parts')}>
+                                 More Tools
+                            </button>
                         <h1 className="text-5xl text-center text-rose-700 mt-10 sp-style">Our Customer's Review</h1>
 
                         <ReviewCard/>

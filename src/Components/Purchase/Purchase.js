@@ -20,7 +20,10 @@ const Purchase = () => {
     const handleQuantity = e => {
         e.preventDefault();
         const inputQuantity = e.target.quantity.value;
-        if (inputQuantity > availableQuantity) {
+        if (!inputQuantity) {
+            toast.error('Give the quantity value')
+        }
+       else if (inputQuantity > availableQuantity) {
             toast.error(`Sorry ${user.displayName} !! We dont have enough quantity`);
         } else if (inputQuantity < minOrderQuantity) {
              toast.error(`Sorry ${user.displayName} !!You have to order Minimum  quantity  ${minOrderQuantity}`);
@@ -71,6 +74,7 @@ const Purchase = () => {
                 <p>{details}</p>
                 <p>Price: ${price}</p>
                 <p>Stock: {availableQuantity}</p>
+                <p>minimum-order: {minOrderQuantity}</p>
                 <form onSubmit={handleQuantity}>
                     <input type="text" placeholder="Quantity" name='quantity' className="input input-bordered input-secondary w-full max-w-xs"
                         required=""

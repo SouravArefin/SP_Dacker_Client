@@ -37,9 +37,7 @@ const Banner = () => {
       <SwiperSlide>
           <img src={banner1} alt="" />
       </SwiperSlide>
-      <SwiperSlide>
-          <img src={banner2} alt="" />
-      </SwiperSlide>
+      
   </Swiper>
 </>
     );

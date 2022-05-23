@@ -73,7 +73,9 @@ else if (rating == 1) {
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
    </div>
-}
+    }
+ 
+    
     return (
         <div>
             <div data-aos="flip-up" className="custom-shadow">
@@ -81,8 +83,8 @@ else if (rating == 1) {
                 <div className="flex items-center mt-10 p-5 ">
                   
                     <div >
-                        <h1 >{r.name}</h1>
-                        <h1 >Posted On 10th December,2021</h1>
+                        <h1 className='sp-style text-blue-900 font-bold'>{r.name}</h1>
+                        <h1 className='opacity-10 text-primary'>Posted On 10th December,2021</h1>
                     </div>
 
                 </div>

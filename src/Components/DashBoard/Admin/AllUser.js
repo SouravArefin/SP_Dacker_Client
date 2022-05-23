@@ -1,0 +1,53 @@
+import React from 'react';
+import { useQuery } from 'react-query';
+import { ToastContainer } from 'react-toastify';
+import Spinner from '../../Spinner/Spinner';
+
+import UserRow from './UserRow';
+
+const AllUser = () => {
+
+
+    const { data: users, isLoading,refetch } = useQuery('users', () => fetch(`http://localhost:4000/user`, {
+        method: 'GET',
+        headers: {
+            authorization:`Bearer ${localStorage.getItem('token')}`
+        }
+    }).then(res => res.json()))
+
+    if (isLoading) {
+        return <Spinner />
+    }
+    return (
+        <div >
+            <h2 className='text-2xl'>Total User : {users.length}</h2>
+            <div className="overflow-x-auto mt-10">
+                <table className="table w-full">
+
+                    <thead>
+                        <tr className="text-center">
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th colspan="2">Action</th>
+                           
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {
+                            users?.map((user, index) => <UserRow
+                            key={user._id}
+                            user={user}
+                                index={index}
+                                refetch ={refetch }
+                        ></UserRow>)
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <ToastContainer/>
+        </div>
+    );
+};
+
+export default AllUser;
