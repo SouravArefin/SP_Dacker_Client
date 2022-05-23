@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import './App.css';
 import Footer from "./Components/Footer/Footer";
 
 import NotFound from "./Components/NotFound/NotFound";
@@ -12,6 +13,8 @@ import RequireAuth from "./Components/RequireAuth/RequireAuth";
 import Parts from "./Components/Parts/Parts";
 import MyPortfolio from "./Components/MyPortfolio/MyPortfolio";
 import MyProfile from "./Components/MyProfile/MyProfile";
+import Contact from "./Components/Contact/Contact";
+import Blog from "./Components/Blog/Blog";
 import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
@@ -21,6 +24,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/signin' element={<Login />}></Route>
+        <Route path='/contact' element={<Contact/>}></Route>
+        <Route path='/blog' element={<Blog/>}> </Route>
         <Route path='/signup' element={<Register />}></Route>
         <Route path='/parts/:id' element={
           <RequireAuth>

@@ -62,7 +62,7 @@ margin-left: 45%;
   box-sizing: border-box;
   transition: height .2s linear, width .3s linear .2s;
 }
-.bg-image::before {
+/* .bg-image::before {
 content: '';
 background-image: url('.././src/10001.png');
 background-repeat: no-repeat;
@@ -71,7 +71,7 @@ height: 320px;
 display: block;
 position: absolute;
 top: 14%;
-}
+} */
 
 .nav-btn:hover::before {
   height: 100%;

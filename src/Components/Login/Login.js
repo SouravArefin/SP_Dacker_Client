@@ -157,7 +157,7 @@ const Login = () => {
                     {
                        sender
                     }
-                <button type="submit" className="text-white bg-[#4ea227] hover:bg-[#2a680d] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+                <button type="submit" className="text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium focus:outline-none  rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
             </form>
             <p className=" font-bold mt-2 ">
 
@@ -170,11 +170,7 @@ const Login = () => {
 
             </p>
 
-            {/* <div className='or-style'>
-                <div style={{ height: '1px',width:'50%',backgroundColor: 'black',marginRight: '20px'}} className='w-50 mt-2'></div>
-                <p className='mt-2 px-2'> or </p>
-                <div style={{ height: '1px',width:'50%',backgroundColor: 'black',marginLeft: '20px'}} className=' w-50 mt-2'></div>
-                </div> */}
+         
 <div className="divider">OR</div>
 
 

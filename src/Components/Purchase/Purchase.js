@@ -5,7 +5,7 @@ import PurchaseForm from './PurchaseForm';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
-
+import { ToastContainer, toast } from 'react-toastify';
 
 const Purchase = () => {
     const { id } = useParams();
@@ -20,9 +20,9 @@ const Purchase = () => {
         e.preventDefault();
         const inputQuantity = e.target.quantity.value;
         if (inputQuantity > availableQuantity) {
-            alert('We dont have enough quantity');
+            toast.error(`Sorry ${user.displayName} !! We dont have enough quantity`);
         } else if (inputQuantity < minOrderQuantity) {
-            alert(`Minimum order quantity is ${minOrderQuantity}`);
+            toast.error(`Sorry ${user.displayName} !!You have to order Minimum  quantity  ${minOrderQuantity}`);
         } else {
 
             setQuantity(inputQuantity)
@@ -157,6 +157,7 @@ const Purchase = () => {
                 <PurchaseForm handleSubmitParam={handleSubmitParam} tool={tool} quantity={quantity}></PurchaseForm>
 
             </div>
+            <ToastContainer/>
         </div>
     );
 };

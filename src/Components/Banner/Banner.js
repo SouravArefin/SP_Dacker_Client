@@ -12,7 +12,8 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 
 
 //banner
-import banner1 from '../../10002.jpg'
+import banner1 from '../../b-1.jpg'
+import banner2 from '../../b-2.jpg'
 
 
 
@@ -37,7 +38,7 @@ const Banner = () => {
           <img src={banner1} alt="" />
       </SwiperSlide>
       <SwiperSlide>
-          <img src={banner1} alt="" />
+          <img src={banner2} alt="" />
       </SwiperSlide>
   </Swiper>
 </>

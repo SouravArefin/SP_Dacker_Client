@@ -21,9 +21,10 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const logout = () => {
-        toast.success('Sign-Out Success.Bye Bye!!')
-
         signOut(auth);
+        toast('Sign-Out Success.Bye Bye!!')
+
+        
     };
     console.log(user)
 
@@ -42,9 +43,9 @@ const Navbar = () => {
                         <p>Get Free Shipping – Free 30 Day Money Back Guarantee</p>
                     </div>
                     <div className="right-icon flex text-white">
-                        <Link to="https://www.facebook.com/profile.php?id=100013452185380"><BsFacebook className='ml-8 text-sm'></BsFacebook></Link>
-                        <Link to="https://www.facebook.com/profile.php?id=100013452185380"><BsTwitter className='ml-8 text-sm'></BsTwitter></Link>
-                        <Link to="https://www.facebook.com/profile.php?id=100013452185380"><BsInstagram className='ml-8 text-sm'></BsInstagram></Link>
+                        <Link to="https://www.facebook.com/profile.php?id=100013452185380"><BsFacebook className='ml-8 text-xl'></BsFacebook></Link>
+                        <Link to="https://www.facebook.com/profile.php?id=100013452185380"><BsTwitter className='ml-8 text-xl'></BsTwitter></Link>
+                        <Link to="https://www.facebook.com/profile.php?id=100013452185380"><BsInstagram className='ml-8 text-xl'></BsInstagram></Link>
                     </div>
                 </div>
             </div>
@@ -55,7 +56,7 @@ const Navbar = () => {
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
                               
-                                <h1 className='sp-style text-rose-600'><span className='text-6xl text-lime-700'>Sp</span>  PC -MenuFecture</h1>
+                                <h1 className='sp-style text-rose-700'><span className='text-6xl text-red-900 sp-style'>Sp</span> <span  className='text-sm sp-style font-bold'>Decker</span></h1>
                             </div>
                             <div className="hidden md:flex justify-between md:ml-auto">
                                 <div className="nav-item ml-10 flex items-baseline space-x-4 text-lg">
@@ -68,15 +69,19 @@ const Navbar = () => {
                                     </NavLink>
                                     <NavLink
                                         to="/blog"
-                                        className="nav-btn px-3 py-2 rounded-md text-xl font-bold"
+                                        className="
+                                         sp-style
+                                        nav-btn px-3 py-2 rounded-md text-xl font-bold"
                                     >
                                         Blog
                                     </NavLink>
                                     <NavLink
                                         to="/parts"
-                                        className="nav-btn px-3 py-2 rounded-md text-sssssm font-bold"
+                                        className="
+                                         sp-style
+                                        nav-btn px-3 py-2 rounded-md text-xl font-bold"
                                     >
-                                        Parts
+                                  Tools 
                                     </NavLink>
 
 
@@ -84,13 +89,17 @@ const Navbar = () => {
 
                                     <NavLink
                                         to='/contact'
-                                        className="nav-btn px-3 py-2 rounded-md text-sssssm font-bold"
+                                        className="
+                                         sp-style
+                                        nav-btn px-3 py-2 rounded-md text-xl font-bold"
                                     >
                                         Contact
                                     </NavLink>
                                     <NavLink
                                         to='/my-portfolio'
-                                        className="nav-btn px-3 py-2 rounded-md text-sssssm font-bold"
+                                        className="
+                                        font-bold sp-style
+                                        nav-btn px-3 py-2 rounded-md text-xl "
                                     >
                                         My-Portfolio
                                     </NavLink>
@@ -99,10 +108,12 @@ const Navbar = () => {
                                         user &&
                                         <>
 
-                                            <NavLink className="nav-btn px-3 py-2 rounded-md text-xl font-bold" to="/dashboard">DashBoard</NavLink>
+                                            <NavLink className="nav-btn px-3 py-2 sp-style rounded-md text-xl font-bold" to="/dashboard">DashBoard</NavLink>
                                             <NavLink
                                         to='/my-profile'
-                                        className="nav-btn px-3 py-2 rounded-md text-xl font-bold"
+                                                className="
+                                        
+                                        sp-style        nav-btn px-3 py-2 rounded-md text-xl font-bold"
                                     >
                                         My Profile
                                     </NavLink>
@@ -115,9 +126,9 @@ const Navbar = () => {
                                 </div>
                                 {
                                     user ?
-                                        <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2"'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
+                                        <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
                                         :
-                                        <button className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2"'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
+                                        <button className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
 
                                 }
 
@@ -126,15 +137,15 @@ const Navbar = () => {
                         <div className="-mr-2 flex md:hidden">
                             {
                                 user ?
-                                    <button onClick={logout} className='md:ml-24 text-red-700 bg-[#0d0e0d] border-2 border-transparent font-bold hover:font-bold px-5 py-1 rounded-md'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
+                                    <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
                                     :
-                                    <button className='md:ml-24 text-sky-400 bg-[#141414] border-2 border-transparent font-bold hover:font-bold px-5 py-1 rounded-md'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
+                                    <button className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'><Link to="/signin">Sign In <FontAwesomeIcon icon={faSignIn} /></Link> </button>
 
                             }
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
                                 type="button"
-                                className="bg-gray-900 ml-5 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                className="bg-primary ml-5 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 aria-controls="mobile-menu"
                                 aria-expanded="false"
                             >
@@ -191,7 +202,10 @@ const Navbar = () => {
                             <div ref={ref} className="mobile-nav px-2 pt-2 pb-3 space-y-1 sm:px-3">
                                 <NavLink
                                     to="/"
-                                    className="hover:bg-gray-700 hover:text-white text-black block px-3 py-2 rounded-md text-base font-bold"
+                                    className="
+                                    
+                                     sp-style
+                                    hover:bg-gray-700 hover:text-white text-black block px-3 py-2 rounded-md text-base font-bold"
                                 >
                                     Home
                                 </NavLink>
@@ -200,19 +214,19 @@ const Navbar = () => {
 
                                 <NavLink
                                     to="/blog"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"
+                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
                                 >
                                     Blog
                                 </NavLink>
                                 <NavLink
                                     to="/parts"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"
+                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
                                 >
-                                    Parts
+                                    Tools
                                 </NavLink>
                                 <NavLink
                                     to="/my-portfolio"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"
+                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
                                 >
                                     My-Portfolio
                                 </NavLink>
@@ -223,10 +237,10 @@ const Navbar = () => {
                                 {
                                     user &&
                                     <>
-                                        <NavLink className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" to="/dashboard">DashBoard</NavLink>
+                                        <NavLink className="text-black hover:bg-gray-700 hover:text-white block px-3  sp-style py-2 rounded-md text-base font-bold" to="/ dashboard">Dashboard</NavLink>
                                         <NavLink
                                     to="/my-profile"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"
+                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
                                 >
                                     My Profile
                                 </NavLink>
@@ -236,7 +250,7 @@ const Navbar = () => {
                                 }
                                 <NavLink
                                     to="/contact"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold"
+                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
                                 >
                                     Contact
                                 </NavLink>
