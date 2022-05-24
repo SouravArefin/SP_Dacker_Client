@@ -27,7 +27,7 @@ const navigate = useNavigate()
             </td>
             <td>
             <label onClick={()=>setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Delete</label></td>
-        <td> <button onClick={() => navigate(`/dashboard/updateTool/${_id}`)} className="btn btn-xs btn-success bg-cyan-600 text-white">Update</button></td>
+        <td> <button onClick={() => navigate(`/dashboard/updateTool/${_id}`)} className="text-white bg-cyan-700   font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2">Update</button></td>
     </tr>
     );
 };

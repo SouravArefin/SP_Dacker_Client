@@ -8,12 +8,13 @@ import { toast } from 'react-toastify';
 import Spinner from '../../Spinner/Spinner';
 import { useQuery } from 'react-query';
 import OrderCard from './OrderCard';
+import Modal from '../Modal';
 const MyOrder = () => {
     const [user] = useAuthState(auth)
    // const [orders, setOrders] = useState([])
     //console.log(orders);
     const navigate = useNavigate()
-  
+    const [modal,setModal] = useState({})
     
     const email = user?.email
     const { data: orders, isLoading,refetch } = useQuery('orders', () => fetch(`http://localhost:4000/singleOrder?email=${email}`, {
@@ -26,10 +27,49 @@ const MyOrder = () => {
     if (isLoading) {
         return <Spinner />
     }
+
+    const orderDelete = (id) => {
+        // console.log("id want to delete", id);
+        // const confirmMsg = window.confirm("Are you sure?")
+
+        // if (confirmMsg) {
+        //     console.log("delete with id", id)
+
+
+            fetch(`http://localhost:4000/myorder/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    "content-type":"application/json",
+                    authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount) {
+                        refetch()
+                        setModal({})
+                        toast.success('Order cancel successfully')
+                    }
+                    else { 
+                        toast.error(`Can't Cancel the Order`)
+                    }
+                })
+            
+        }
     return (
         <div>
          {orders?.length ?    <h1 className='font-bold text-2xl sp-style text-blue-900 mt-10'>Here is the {orders?.length} {orders?.length==1 ?'tool':'tools'} that you ordered :-</h1> : <h1 className='font-bold text-2xl sp-style text-red-900 mt-10'>You Don't Have any order</h1>}
-          
+         {
+                modal?._id && <Modal
+                    modal={modal}
+            setModal={setModal}
+                sendEvent={orderDelete}
+              
+                
+                ></Modal>
+            }
          <div className="overflow-x-auto mt-10">
                 <table className="table w-full">
 
@@ -54,7 +94,9 @@ const MyOrder = () => {
                             key={o._id}
                             o={o}
                                 index={index}
-                                refetch ={refetch }
+                                refetch={refetch}
+                                sendEvent={orderDelete}
+                                setModal={setModal}
                         ></OrderCard>)
                         }
                     </tbody>

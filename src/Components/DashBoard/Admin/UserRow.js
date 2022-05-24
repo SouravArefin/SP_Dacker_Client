@@ -28,7 +28,7 @@ const UserRow = ({ user, index, refetch }) => {
         <tr className='text-center'>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role ? <span className='text-green-700 sp-style'>Already an Admin</span> : <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
+            <td>{role ? <span className='text-green-700 sp-style'> Admin</span> : <button onClick={makeAdmin} className="btn btn-xs">Promote</button>}</td>
           
         </tr>
 

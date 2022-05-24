@@ -3,9 +3,9 @@ import { toast } from 'react-toastify';
 
 const ManageTable = ({ o, index, refetch,sendEvent,setModal }) => {
 
-  
+  console.log(o)
 
-    const { _id, img, productName, number, price, quantity, address } = o
+    const { _id, img, productName,userName,email, number, price, quantity, address } = o
     return (
         <tr className='text-center'>
             <th>{index + 1}</th>
@@ -15,6 +15,8 @@ const ManageTable = ({ o, index, refetch,sendEvent,setModal }) => {
                 </div>
             </div></td>
 
+            <td>{userName}</td>
+            <td>{email}</td>
             <td>{productName}</td>
             <td>{price}</td>
             <td>{quantity}</td>
@@ -22,7 +24,7 @@ const ManageTable = ({ o, index, refetch,sendEvent,setModal }) => {
             <td>{number}</td>
             <td>
             <label onClick={()=>setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Delete</label></td>
-            <td> <button className="btn btn-xs bg-cyan-500 text-white">Update</button></td>
+            <td> <button className="text-white bg-cyan-700   font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2">Update</button></td>
         </tr>
     );
 };

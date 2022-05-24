@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderCard = ({ o, refetch, index }) => {
+const OrderCard = ({ o, index, refetch,sendEvent,setModal }) => {
     const {img,productName,number,price,quantity,address}=o
     return (
         <tr className='text-center'>
@@ -16,8 +16,8 @@ const OrderCard = ({ o, refetch, index }) => {
         <td>{quantity}</td>
         <td>{address}</td>
         <td>{number}</td>
-            <td>
-                <button className="btn btn-xs btn-error text-white">Cancel</button></td>
+        <td>
+        <label onClick={()=>setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Cancel</label></td>
         <td> <button className="btn btn-xs btn-success text-white">Payment</button></td>
     </tr>
     );

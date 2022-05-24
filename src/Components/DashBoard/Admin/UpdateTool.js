@@ -7,7 +7,7 @@ import usePartsDetail from '../../../Hooks/usePartsDetail';
 const UpdateTool = () => {
     const { id } = useParams()
     const { part } = usePartsDetail(id)
-    //console.log(part);
+    console.log(part);
     const { register, handleSubmit, watch, formState: { errors }, trigger, reset } = useForm();
 
 
@@ -68,6 +68,8 @@ const UpdateTool = () => {
         
     }
     return (
+        <>
+        <h1 className='mt-10 text-3xl text-center text-cyan-700 sp-style'>Update Your Product</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 m-10'>
              <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
             <figure><img src={part.image} alt="Shoes" /></figure>
@@ -91,10 +93,7 @@ const UpdateTool = () => {
                         placeholder="product Name"
                         className="input input-bordered w-full max-w-xs"
                         {...register("name", {
-                            required: {
-                                value: true,
-                                message: 'Name is Required'
-                            }
+                          
                         })}
                     />
                     <label className="label">
@@ -205,6 +204,8 @@ const UpdateTool = () => {
                 <input className='btn w-full max-w-xs text-white bg-cyan-700' type="submit" value="Update" />
             </form>
         </div>
+        </>
+      
     );
 };
 

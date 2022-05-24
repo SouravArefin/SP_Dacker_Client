@@ -109,9 +109,7 @@ const Login = () => {
         if (user4) {
             navigate(from, { replace: true })
         }
-            // .then(() => {
-            //     navigate(from, { replace: true })
-            // })
+       
     }
    
     const resetPassword = async () => {
@@ -161,7 +159,7 @@ const Login = () => {
             </form>
             <p className=" font-bold mt-2 ">
 
-                New To Sp_MenuFecture ? <Link className='form-link' to='/signup'><span className='text-red-700'>Create an Account</span></Link>
+                New To <span className='text-red-900 sp-style text-4xl'>Sp</span><span className='sp-style text-xl text-red-700'>Deckar</span> ? <Link className='form-link' to='/signup'><span className='text-red-700'>Create an Account</span></Link>
 
             </p>
             <p >

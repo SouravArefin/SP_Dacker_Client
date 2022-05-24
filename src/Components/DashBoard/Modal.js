@@ -12,7 +12,7 @@ const Modal = ({modal,sendEvent,setModal }) => {
             <input type="checkbox" id="deleteModal" class="modal-toggle" />
             <div class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
-                    <h3 class="font-bold text-lg">Are You Want to Delete this Tools?</h3>
+                    <h3 class="font-bold text-lg">Are You Sure?</h3>
                   
                     <div class="modal-action">
                         <label onClick={()=>sendEvent(modal._id)} for="deleteModal" class="btn">Yes</label>
