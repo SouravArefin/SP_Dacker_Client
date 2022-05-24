@@ -36,7 +36,7 @@ const Purchase = () => {
     }
 
     //handle submit
-    const handleSubmitParam = data => {
+    const handleSubmitParam = (data,e) => {
         const userName = user?.displayName;
         const userInput = {
             userName,
@@ -55,7 +55,7 @@ const Purchase = () => {
                 const { data } = response;
                 if (data.insertedId) {
                     toast.success('Your order is booked')
-                    reset()
+                   e.target.reset()
                  }
         })
 

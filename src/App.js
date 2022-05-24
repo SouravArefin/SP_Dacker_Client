@@ -24,6 +24,7 @@ import RequireAdmin from './Components/RequireAuth/RequireAdmin'
 import AddTools from "./Components/DashBoard/Admin/AddTools";
 import Welcome from "./Components/DashBoard/Welcome";
 import ManageTools from "./Components/DashBoard/Admin/ManageTools";
+import UpdateTool from './Components/DashBoard/Admin/UpdateTool'
 import { ToastContainer } from "react-toastify";
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path='/contact' element={<Contact />}></Route>
         <Route path='/blog' element={<Blog />}></Route>
         <Route path='/signup' element={<Register />}></Route>
+      
         <Route path='/parts/:id' element={
           <RequireAuth>
             <Purchase />
@@ -74,6 +76,10 @@ function App() {
           }></Route>
           <Route path="add" element={
               <RequireAdmin> <AddTools /></RequireAdmin>
+           
+          }></Route>
+          <Route path='updateTool/:id' element={
+              <RequireAdmin> <UpdateTool/></RequireAdmin>
            
           }></Route>
           <Route path="manageTools" element={

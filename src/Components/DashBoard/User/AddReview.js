@@ -33,7 +33,7 @@ const AddReview = () => {
                 .then(res => res.json())
                .then(data => {
                    console.log('success', data)
-                   alert('Thanks For Your Valuable Feedback')
+                   toast.success('Thanks For Your Valuable Feedback')
             })
         }
      e.target.reset()

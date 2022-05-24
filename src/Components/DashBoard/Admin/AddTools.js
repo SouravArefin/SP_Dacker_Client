@@ -10,7 +10,7 @@ const AddTools = () => {
 
     const imageSotrageKey = `c0749433704e7ac8ba2e6b642a43ad51`
   
-    const handleAddDoctor = async data => {
+    const handleAddProduct = async data => {
         const image = data.image[0]
         const url = `https://api.imgbb.com/1/upload?key=${imageSotrageKey}`
         const formData = new FormData();
@@ -43,10 +43,10 @@ const AddTools = () => {
                     })
                         .then(res => res.json())
                         .then(inserted => {
-                            console.log(inserted,'inser');
+                
                             if (inserted.insertedId) {
                                 toast.success(`Hurray!!New tools. ${data.name} added successfully`);
-                                console.log('doctor-inserted', inserted)
+                        
                                reset()
                             }
                             else { 
@@ -65,7 +65,7 @@ const AddTools = () => {
     }
     return (
         <div>
-            <form className='m-5' onSubmit={handleSubmit(handleAddDoctor)}>
+            <form className='m-5' onSubmit={handleSubmit(handleAddProduct)}>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Name</span>

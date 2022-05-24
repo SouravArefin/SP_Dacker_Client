@@ -71,7 +71,7 @@ const PurchaseForm = ({ handleSubmitParam, tool, quantity }) => {
                             required: 'Number is required',
                             pattern: {
                                 value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
-                                message: "Not a valid US number"
+                                message: "Not a valid BD number"
                             }
                         })}
                         onKeyUp={() => {

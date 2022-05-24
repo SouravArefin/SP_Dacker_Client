@@ -1,7 +1,7 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const ManageTable = ({ o, index, refetch,sendEvent }) => {
+const ManageTable = ({ o, index, refetch,sendEvent,setModal }) => {
 
   
 
@@ -21,7 +21,7 @@ const ManageTable = ({ o, index, refetch,sendEvent }) => {
             <td>{address}</td>
             <td>{number}</td>
             <td>
-                <button onClick={() => sendEvent(_id)} className="btn btn-xs btn-error text-white">Delete</button></td>
+            <label onClick={()=>setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Delete</label></td>
             <td> <button className="btn btn-xs bg-cyan-500 text-white">Update</button></td>
         </tr>
     );

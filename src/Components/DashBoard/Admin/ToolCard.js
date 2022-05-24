@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const ToolCard = ({o,index,sendEvent, refetch}) => {
+const ToolCard = ({o,index,sendEvent, refetch,setModal}) => {
     const {_id,image,name,number,price,minOrderQuantity
 ,availableQuantity,details
-}=o
+    } = o
+    
+const navigate = useNavigate()
+   
     return (
         <tr className='text-center'>
         <th>{index + 1}</th>
@@ -22,8 +26,8 @@ const ToolCard = ({o,index,sendEvent, refetch}) => {
                 
             </td>
             <td>
-                <button onClick={()=>sendEvent(_id)} className="btn btn-xs bg-primary btn-error text-white">Delete</button></td>
-        <td> <button className="btn btn-xs btn-success bg-cyan-600 text-white">Update</button></td>
+            <label onClick={()=>setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Delete</label></td>
+        <td> <button onClick={() => navigate(`/dashboard/updateTool/${_id}`)} className="btn btn-xs btn-success bg-cyan-600 text-white">Update</button></td>
     </tr>
     );
 };
