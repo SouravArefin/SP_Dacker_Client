@@ -89,7 +89,7 @@ const Purchase = () => {
                 <PurchaseForm handleSubmitParam={handleSubmitParam} tool={tool} quantity={quantity}></PurchaseForm>
 
             </div>
-            <ToastContainer/>
+           
         </div>
     );
 };

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 import Spinner from '../../Spinner/Spinner';
-import ManageTable from './ManageTable'
-const ManageOrder = () => {
+import ToolCard from './ToolCard';
 
-     const { data: allorders, isLoading,refetch } = useQuery('allorders', () => fetch(`http://localhost:4000/orders`, {
+const ManageTools = () => {
+   
+    const { data:allParts, isLoading,refetch } = useQuery('allParts', () => fetch(`http://localhost:4000/parts`, {
         method: 'GET',
         headers: {
             authorization:`Bearer ${localStorage.getItem('token')}`
@@ -15,7 +16,9 @@ const ManageOrder = () => {
     if (isLoading) {
         return <Spinner />
     }
-    const orderDelete = (id) => {
+
+   
+    const partsDelete = (id) => {
         console.log("id want to delete", id);
         const confirmMsg = window.confirm("Are you sure?")
 
@@ -23,11 +26,11 @@ const ManageOrder = () => {
             console.log("delete with id", id)
 
 
-            fetch(`http://localhost:4000/order/${id}`, {
+            fetch(`http://localhost:4000/parts/${id}`, {
                 method: 'DELETE',
                 headers: {
-                    "content-type":"application/json",
-                    authorization: `Bearer ${localStorage.getItem('token')}`
+                    'content-type':'application/json',
+                     'authorization': `Bearer ${localStorage.getItem('token')}`
                 }
 
             })
@@ -36,10 +39,11 @@ const ManageOrder = () => {
                     console.log(data);
                     if (data.deletedCount) {
                         refetch()
-                        toast.success('Order delete successfully')
+                        toast.success('Tools delete successfully')
                     }
+                   
                 })
-            
+          
         }
         else {
             toast.error('ok,No problem')
@@ -48,7 +52,7 @@ const ManageOrder = () => {
     }
     return (
         <div>
-         {allorders?.length ? <h1 className='font-bold text-2xl sp-style text-blue-900 mt-10'>Here is the {allorders?.length} {allorders?.length==1 ?'order':'orders'}:-</h1> : <h1 className='font-bold text-2xl sp-style text-red-900 mt-10'>There is no Order</h1>}
+         {allParts?.length ? <h1 className='font-bold text-2xl sp-style text-blue-900 mt-10'>Here is the {allParts?.length} {allParts?.length==1 ?'Tool':'Tools'}:-</h1> : <h1 className='font-bold text-2xl sp-style text-red-900 mt-10'>There is no Tools.Add Some Tools</h1>}
           
          <div className="overflow-x-auto mt-10">
                 <table className="table w-full">
@@ -58,10 +62,10 @@ const ManageOrder = () => {
                             <th>No.</th>
                             <th>Image</th>
                             <th>Name</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Address</th>
-                            <th>Phone</th>
+                            <th>price</th>
+                            <th>Stock</th>
+                            <th>Minimum-Order</th>
+                            <th>Details</th>
                             <th colspan='2'>Action</th>
                            
                            
@@ -70,13 +74,13 @@ const ManageOrder = () => {
                     <tbody>
 
                         {
-                            allorders?.map((o, index) => <ManageTable
+                           allParts?.map((o, index) => <ToolCard
                             key={o._id}
                             o={o}
                                 index={index}
-                                refetch ={refetch }
-                                sendEvent={orderDelete}
-                        ></ManageTable>)
+                                refetch={refetch}
+                                sendEvent = {partsDelete}
+                        ></ToolCard>)
                         }
                     </tbody>
                 </table>
@@ -85,4 +89,4 @@ const ManageOrder = () => {
     );
 };
 
-export default ManageOrder;
+export default ManageTools;

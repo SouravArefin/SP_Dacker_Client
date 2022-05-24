@@ -28,7 +28,7 @@ const AllUser = () => {
                         <tr className="text-center">
                             <th>No.</th>
                             <th>Name</th>
-                            <th colspan="2">Action</th>
+                            <th>Action</th>
                            
                         </tr>
                     </thead>
@@ -45,7 +45,7 @@ const AllUser = () => {
                     </tbody>
                 </table>
             </div>
-            <ToastContainer/>
+          
         </div>
     );
 };

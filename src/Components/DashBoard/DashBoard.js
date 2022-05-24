@@ -31,16 +31,31 @@ const DashBoard = () => {
           
           <ul className="menu p-4 overflow-y-auto w-60 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
-           
-            <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard'>My Order </Link></li>
+            {
+              admin ? <>
+                <li className='text-primary sp-style font-bold text-xl'>
+                  <Link to='/dashboard/user'>All User </Link></li>
+                <li className='text-primary sp-style font-bold text-xl'>
+                  <Link to='/dashboard/manageOrder'>Manage-Order </Link></li>
+                <li className='text-primary sp-style font-bold text-xl'>
+                  <Link to='/dashboard/manageTools'>Manage-Tools </Link></li>
+            <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/add'>Add Products </Link></li>
+         
+              
+              </>
+                :
+                <>
+                  
+                 <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/myorder'>My Order </Link></li>
              
-            <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/review'>Add Review </Link></li>
-            <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/profile'>My Profile </Link></li>
+             <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/review'>Add Review </Link></li>
+           
+                </>
+           }
+              <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/profile'>My Profile </Link></li>
 
-            {/* //admin---- */}
-            <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/user'>All User </Link></li>
-            <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/manageOrder'>Manage-Order </Link></li>
-            <li className='text-primary sp-style font-bold text-xl'><Link to='/dashboard/profile'>My Profile </Link></li>
+         
+         
             
        
           </ul>

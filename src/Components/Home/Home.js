@@ -54,7 +54,7 @@ const Home = () => {
                                 />
                             </div>
             <h1 className="text-5xl text-center text-rose-700 mt-10 sp-style">Latest Tools</h1>
-            <div className='container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10'>
+            <div className='container mt-10 mx-auto grid grid-cols-1 md:grid-cols-3 gap-10'>
                             {
                                 reversedTools.slice(0, 6).map(tool => <ToolsCard handlePurchase={handlePurchase} tool={tool} key={tool._id}></ToolsCard>)
                             }

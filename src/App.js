@@ -20,7 +20,11 @@ import MyOrder from "./Components/DashBoard/User/MyOrder";
 import AddReview from "./Components/DashBoard/User/AddReview";
 import AllUser from "./Components/DashBoard/Admin/AllUser";
 import ManageOrder from "./Components/DashBoard/Admin/ManageOrder";
-
+import RequireAdmin from './Components/RequireAuth/RequireAdmin'
+import AddTools from "./Components/DashBoard/Admin/AddTools";
+import Welcome from "./Components/DashBoard/Welcome";
+import ManageTools from "./Components/DashBoard/Admin/ManageTools";
+import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <div >
@@ -55,11 +59,27 @@ function App() {
 
         }>
 
-          <Route index element={<MyOrder />}></Route>
+          <Route index element={<Welcome/>}></Route>
+
           <Route path="review" element={<AddReview />}></Route>
-          <Route path="profile" element={ <MyProfile />}></Route>
-          <Route path="user" element={ <AllUser />}></Route>
-          <Route path="manageOrder" element={ <ManageOrder />}></Route>
+          <Route path="profile" element={<MyProfile />}></Route>
+          <Route path="myorder" element={<MyOrder />}></Route>
+          
+          <Route path="user" element={
+            <RequireAdmin><AllUser /></RequireAdmin>
+          }></Route>
+          <Route path="manageOrder" element={
+              <RequireAdmin> <ManageOrder /></RequireAdmin>
+           
+          }></Route>
+          <Route path="add" element={
+              <RequireAdmin> <AddTools /></RequireAdmin>
+           
+          }></Route>
+          <Route path="manageTools" element={
+              <RequireAdmin> <ManageTools /></RequireAdmin>
+           
+          }></Route>
         
 
 
@@ -68,6 +88,7 @@ function App() {
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer />
+      <ToastContainer/>
     </div>
   );
 }

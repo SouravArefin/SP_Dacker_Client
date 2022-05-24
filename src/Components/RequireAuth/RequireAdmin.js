@@ -21,7 +21,7 @@ const RequireAdmin = ({ children }) => {
   }
   if (!user||!admin) {
     signOut(auth)
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/signin" state={{ from: location }} replace />;
   }
   else { return children }
 

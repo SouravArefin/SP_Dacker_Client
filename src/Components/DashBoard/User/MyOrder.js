@@ -14,31 +14,7 @@ const MyOrder = () => {
     //console.log(orders);
     const navigate = useNavigate()
   
-    // useEffect(() => {
-    //     const getItems = async () => {
-    //         const email = user?.email
-    //         const url = `http://localhost:4000/singleOrder?email=${email}`
-           
-    //         try {
-    //             const { data } = await axios.get(url, {
-    //                 headers: { 
-    //                     authorization: `Bearer ${localStorage.getItem('token')}`
-    //                 }
-    //             })
-                
-    //             setOrders(data)
-    //         } catch (error) {
-                
-    //             if (error.response.status === 403 || error.response.status === 401) {
-    //                signOut(auth)
-    //                 navigate('/signin')
-    //             }
-    //             toast(error.message)
-    //       }
-    //     }
-    //     getItems()
-
-    // }, [])
+    
     const email = user?.email
     const { data: orders, isLoading,refetch } = useQuery('orders', () => fetch(`http://localhost:4000/singleOrder?email=${email}`, {
         method: 'GET',
