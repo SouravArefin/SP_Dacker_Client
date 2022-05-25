@@ -26,6 +26,7 @@ import Welcome from "./Components/DashBoard/Welcome";
 import ManageTools from "./Components/DashBoard/Admin/ManageTools";
 import UpdateTool from './Components/DashBoard/Admin/UpdateTool'
 import { ToastContainer } from "react-toastify";
+import Payment from "./Components/DashBoard/User/Payment";
 function App() {
   return (
     <div >
@@ -66,6 +67,7 @@ function App() {
           <Route path="review" element={<AddReview />}></Route>
           <Route path="profile" element={<MyProfile />}></Route>
           <Route path="myorder" element={<MyOrder />}></Route>
+          <Route path="payment/:id" element={<Payment/>}></Route>
           
           <Route path="user" element={
             <RequireAdmin><AllUser /></RequireAdmin>

@@ -77,6 +77,7 @@ const ManageOrder = () => {
                             <th>Quantity</th>
                             <th>Address</th>
                             <th>Phone</th>
+                            <th>transaction Id</th>
                             <th colspan='2'>Action</th>
                            
                            

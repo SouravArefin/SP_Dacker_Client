@@ -8,7 +8,7 @@ import UserRow from './UserRow';
 const AllUser = () => {
 
 
-    const { data: users, isLoading,refetch } = useQuery('users', () => fetch(`http://localhost:4000/user`, {
+    const { data: allUsers, isLoading,refetch } = useQuery('allUsers', () => fetch(`http://localhost:4000/user`, {
         method: 'GET',
         headers: {
             authorization:`Bearer ${localStorage.getItem('token')}`
@@ -18,9 +18,10 @@ const AllUser = () => {
     if (isLoading) {
         return <Spinner />
     }
+    console.log(allUsers)
     return (
         <div >
-            <h2 className='text-2xl'>Total User : {users.length}</h2>
+            <h2 className='text-2xl'>Total User : {allUsers.length}</h2>
             <div className="overflow-x-auto mt-10">
                 <table className="table w-full">
 
@@ -32,10 +33,11 @@ const AllUser = () => {
                            
                         </tr>
                     </thead>
+
                     <tbody>
 
                         {
-                            users?.map((user, index) => <UserRow
+                            allUsers?.map((user, index) => <UserRow
                             key={user._id}
                             user={user}
                                 index={index}

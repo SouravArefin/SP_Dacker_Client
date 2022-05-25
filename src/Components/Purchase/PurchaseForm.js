@@ -69,10 +69,7 @@ const PurchaseForm = ({ handleSubmitParam, tool, quantity }) => {
                     <input type="number" name="floating_phone" id="floating_phone" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required=""
                         {...register('number', {
                             required: 'Number is required',
-                            pattern: {
-                                value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
-                                message: "Not a valid BD number"
-                            }
+                          
                         })}
                         onKeyUp={() => {
                             trigger('number')
