@@ -22,11 +22,12 @@ const Register = () => {
     const [
         createUserWithEmailAndPassword,
         user,
-        loading
+        loading,
+        error
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
    
-   
-   // console.log(user)
+   console.log(error,'error');
+    console.log(user,'register')
     
     const [signInWithGoogle, user2,loading2, error2] = useSignInWithGoogle(auth)
     const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
@@ -42,23 +43,29 @@ const Register = () => {
     if (token) {
         navigate(from, { replace: true })
     }
-    
+    if (user) {
+        toast.success('Profile create successfully');
+        navigate('/')
+    }
    
     const handleCreateUser = async e => {
         const fullName = e.firstname + '' + e.lastname;
        console.log(e.firstname +''+e.lastname)
       // console.log(e,"eeeeeee");
+        console.log(e.email,'email')
+        console.log(e.password,'pass')
+        console.log(e.confirmPassword,'confirmPassword')
         if (e.password !=e.confirmPassword) {
             toast.error("password didn't match")
             return;
         }
-
-        toast.success('Profile create successfully');
+        await createUserWithEmailAndPassword(e.email, e.password)
+       
         
-           await createUserWithEmailAndPassword(e.email, e.password)
+          
         await updateProfile({ displayName: fullName });
 
-        navigate('/')
+       
 
     }
    
@@ -100,9 +107,14 @@ const Register = () => {
   });
     }
     let errorMsg;
-    if ( error1 || error3 || error2) {
-    errorMsg = <p className='text-red-700'>Error : {error1?.message} {error3?.message} {error2?.message}</p>;
+  
+    if (error1 || error3 || error2||error) {
+        if (error.message.includes('email-already-in-use')) {
+            errorMsg =<p className='text-red-700'>email-already-in-use</p>
+        }
+    errorMsg = <p className='text-red-700'>Error : {error1?.message} {error3?.message} {error2?.message} {error?.message}</p>;
     }
+    
     let loader;
     if (loading || loading1 || loading2) {
         loader =

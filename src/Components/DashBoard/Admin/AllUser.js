@@ -18,7 +18,7 @@ const AllUser = () => {
     if (isLoading) {
         return <Spinner />
     }
-    console.log(allUsers)
+   // console.log(allUsers)
     return (
         <div >
             <h2 className='text-2xl'>Total User : {allUsers.length}</h2>
@@ -28,8 +28,10 @@ const AllUser = () => {
                     <thead>
                         <tr className="text-center">
                             <th>No.</th>
+                            <th>Image</th>
                             <th>Name</th>
-                            <th>Action</th>
+                            <th>Email</th>
+                            <th>User  / admin</th>
                            
                         </tr>
                     </thead>

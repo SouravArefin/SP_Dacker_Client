@@ -93,6 +93,7 @@ const ManageOrder = () => {
                                 refetch ={refetch }
                                 sendEvent={orderDelete}
                                 setModal={setModal}
+                                isLoading={ isLoading}
                         ></ManageTable>)
                         }
                     </tbody>

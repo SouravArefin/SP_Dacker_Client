@@ -27,6 +27,8 @@ import ManageTools from "./Components/DashBoard/Admin/ManageTools";
 import UpdateTool from './Components/DashBoard/Admin/UpdateTool'
 import { ToastContainer } from "react-toastify";
 import Payment from "./Components/DashBoard/User/Payment";
+import UpdateForm from "./Components/MyProfile/UpdateProfile";
+import UpdateProfile from "./Components/MyProfile/UpdateProfile";
 function App() {
   return (
     <div >
@@ -68,6 +70,7 @@ function App() {
           <Route path="profile" element={<MyProfile />}></Route>
           <Route path="myorder" element={<MyOrder />}></Route>
           <Route path="payment/:id" element={<Payment/>}></Route>
+          <Route path="my-profile/edit-profile/:id" element={<UpdateProfile/>}></Route>
           
           <Route path="user" element={
             <RequireAdmin><AllUser /></RequireAdmin>

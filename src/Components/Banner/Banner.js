@@ -34,10 +34,13 @@ const Banner = () => {
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
   >
+  
       <SwiperSlide>
+          <img className='w-full'src={banner2} alt="" />
+      </SwiperSlide>
+          <SwiperSlide>
           <img src={banner1} alt="" />
       </SwiperSlide>
-      
   </Swiper>
 </>
     );

@@ -3,7 +3,7 @@ import { auth } from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+
 import { toast } from 'react-toastify';
 import Spinner from '../../Spinner/Spinner';
 import { useQuery } from 'react-query';
@@ -13,7 +13,7 @@ const MyOrder = () => {
     const [user] = useAuthState(auth)
    // const [orders, setOrders] = useState([])
     //console.log(orders);
-    const navigate = useNavigate()
+    //const navigate = useNavigate()
     const [modal,setModal] = useState({})
     
     const email = user?.email
@@ -29,11 +29,7 @@ const MyOrder = () => {
     }
 
     const orderDelete = (id) => {
-        // console.log("id want to delete", id);
-        // const confirmMsg = window.confirm("Are you sure?")
-
-        // if (confirmMsg) {
-        //     console.log("delete with id", id)
+       
 
 
             fetch(`http://localhost:4000/myorder/${id}`, {

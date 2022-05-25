@@ -5,7 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import { auth } from '../../../firebase.init';
 
-const ManageTable = ({ o, index, refetch, sendEvent, setModal }) => {
+const ManageTable = ({ o, index, refetch, sendEvent, setModal, isLoading }) => {
 
     //console.log(o)
 
@@ -33,6 +33,9 @@ const ManageTable = ({ o, index, refetch, sendEvent, setModal }) => {
                 }
             })
 
+    }
+    if (isLoading) {
+        return <p>Please wait a moment</p>
     }
     return (
         <tr className='text-center'>
