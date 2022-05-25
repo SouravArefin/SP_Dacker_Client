@@ -83,6 +83,7 @@ const MyOrder = () => {
                             <th>Address</th>
                             <th>Phone</th>
                             <th>transaction id </th>
+                            <th>Deliver </th>
                             <th colspan='2'>ProCeed</th>
                            
                            

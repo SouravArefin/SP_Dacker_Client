@@ -1,3 +1,5 @@
+import { faBan, faCheck, faMoneyCheckAlt, faShippingFast, faTrashRestoreAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
@@ -24,7 +26,7 @@ const ManageTable = ({ o, index, refetch, sendEvent, setModal }) => {
             .then(data => {
                 if (data.modifiedCount > 0) {
                     refetch()
-                    toast.success('On the way for shipping')
+                    toast.success('On the way for Delivery')
                 }
                 else { 
                     toast.error(`Can't Shipped`)
@@ -41,28 +43,38 @@ const ManageTable = ({ o, index, refetch, sendEvent, setModal }) => {
                 </div>
             </div></td>
 
-            <td>{userName}</td>
-            <td>{email}</td>
-            <td>{productName}</td>
-            <td>{price}</td>
-            <td>{quantity}</td>
-            <td>{address}</td>
-            <td>{number}</td>
+            <td><span className="font-bold">{userName}</span></td>
+            <td><span className="font-bold">{email}</span></td>
+            <td><span className="font-bold">{productName}</span></td>
+            <td><span className="font-bold">{price}</span></td>
+            <td><span className="font-bold">{quantity}</span></td>
+            <td><span className="font-bold">{address}</span></td>
+            <td><span className="font-bold">{number}</span></td>
             <td>{
                 transactionId ?<span className='text-amber-700 font-bold'>{transactionId}</span> 
                     :
-                    <span className='text-2xl sp-style text-red-700'> can't receive the money yet</span>
+                    <span className='text-xl sp-style text-red-700'> can't receive the money yet
+                    
+                    </span>
             
             }</td>
             {
                 paid ? <>
 
                     <td>
-                        <p className='text-2xl font-bold text-green-700 sp-style'>Already Paid</p>
+                        <p className='text-xl font-bold text-green-700 sp-style'>receive'd Money
+                        <FontAwesomeIcon className='pl-2'icon={faCheck}></FontAwesomeIcon>
+                        </p>
                     </td>
                     <td>
                         {
-                            isDeliverd? <p className='text-2xl font-bold text-blue-700 sp-style'>Shipping Done</p>:<button onClick={makeShip} className="text-white bg-cyan-700   font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2">Ship</button>
+                            isDeliverd ? <p className='text-xl font-bold text-blue-700 sp-style'>Delivery Done
+                             <FontAwesomeIcon className='pl-2'icon={faCheck}></FontAwesomeIcon>
+                            
+                            </p> : <button onClick={makeShip} className="text-white bg-cyan-700   font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2">Ship
+                            
+                            <FontAwesomeIcon className='pl-2'icon={faShippingFast}></FontAwesomeIcon> 
+                                </button>
                         }
                         
                     </td>
@@ -70,9 +82,13 @@ const ManageTable = ({ o, index, refetch, sendEvent, setModal }) => {
                     :
                     <>
                         <td>
-                            <label onClick={() => setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Delete</label></td>
+                            <label onClick={() => setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Delete
+                            <FontAwesomeIcon className='pl-2'icon={faTrashRestoreAlt}></FontAwesomeIcon>
+                            </label></td>
                         <td>
-                            <p className='text-2xl font-bold text-red-700 sp-style'>Not Paid Yet</p>
+                            <p className='text-xl font-bold text-red-700 sp-style'>Not Paid Yet
+                            <FontAwesomeIcon className='pl-2'icon={faBan}></FontAwesomeIcon>
+                            </p>
                         </td>
 
                     </>

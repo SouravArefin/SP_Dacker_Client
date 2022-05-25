@@ -1,3 +1,5 @@
+import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 const ToolsCard = ({ tool, handlePurchase }) => {
@@ -13,7 +15,10 @@ const ToolsCard = ({ tool, handlePurchase }) => {
                 <p>Stock: {availableQuantity}</p>
                 <p>Minimum Order: {minOrderQuantity}</p>
                 <div className="card-actions justify-end">
-                    <button onClick={() => handlePurchase(_id)} className="btn btn-primary w-full text-white">Buy Now</button>
+                    <button onClick={() => handlePurchase(_id)} className="btn btn-primary w-full text-white">Buy Now
+                    <FontAwesomeIcon className='pl-2'icon={faBagShopping}></FontAwesomeIcon>
+                    
+                    </button>
                 </div>
             </div>
         </div>
