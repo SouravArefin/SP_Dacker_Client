@@ -1,4 +1,7 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&family=Raleway:wght@600;700&family=Roboto+Mono:wght@300&display=swap');
+.review-style{
+  font-family: 'Raleway', sans-serif;
+}
 /* Accordion---------Home page */
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 
@@ -61,7 +64,32 @@
     padding: 18px;
 }
 
+.image-slide-bgOne {
+ 
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(./b-1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 146px);
+}
 
+.image-slide-bgTwo {
+  /* background-image: url(./Assets/Images/slide2.jpg); */
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(./b-2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 146px);
+}
+
+/* .image-slide-bgThree {
+  /* background-image: url(./Assets/Images/slide3.jpg); */
+  /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url(./Assets/Images/slide3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 146px); */
+/* }  */
 
 .sp-style{
   font-family: 'Times New Roman', Times, serif;

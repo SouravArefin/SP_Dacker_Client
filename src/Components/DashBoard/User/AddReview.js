@@ -25,7 +25,7 @@ const AddReview = () => {
             user
         }
         if (orders.length === 0) {
-            toast.error('Please,at least order one product for giving review')
+            toast.error(`Dear ${user.displayName} .Please,at least order one product for giving review`)
         }
         else {
             fetch('https://salty-reef-27679.herokuapp.com/review/', {
@@ -48,7 +48,10 @@ const AddReview = () => {
     }
     return (
         <div className='text-center'>
-            <h1 className='mt-10 sp-style text-2xl text-amber-7000'>Please leave a review</h1>
+            <h1 className='mt-10 sp-style text-2xl text-green-900'>Hi, {user.displayName}</h1>
+            <h1 className='mt-10 sp-style text-2xl text-amber-700'>If you like or dislike our service,tell us by giving your review.</h1>
+            <h1 className=' sp-style text-2xl text-amber-700'>We are always trying our best for our clients</h1>
+            <h1 className='mt-10 sp-style text-2xl text-amber-7000'>Give us your feedback</h1>
             <StarRating setCustomRating={setCustomRating}></StarRating>
             <form onSubmit={handleSubmit(onSubmitReview)}>
                 <textarea class="textarea textarea-bordered w-1/2" placeholder="Your Review"

@@ -120,7 +120,9 @@ const Navbar = () => {
                                 {
                                     user ?
                                         <>
-                                            <h1 className='text-rose-700 text-l sp-style mt-2 font-bold'>{user.displayName}</h1>
+                                            <div className='flex items-center '>
+                                            <h1 className='-mt-2 cursor-pointer text-xl font-bold border border-gray-500 rounded-sm text-red-700 px-2 py-1' onClick={() => navigate(`dashboard/profile`)}>{user?.displayName?.split(' ')[0]}</h1>
+                                            </div>
                                             <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
                                         </>
                                         :
@@ -134,7 +136,9 @@ const Navbar = () => {
                             {
                                 user ?
                                     <>
-                                        <h2 className="text-rose-700 sp-style text-l font-bold mt-5">{user.displayName}</h2>
+                                        <div className='flex items-center '>
+                                        <h2 className='-mt-1 cursor-pointer text-xl font-bold border border-gray-500 rounded-sm text-red-700 px-2 py-1' onClick={() => navigate(`dashboard/profile`)}>{user?.displayName?.split(' ')[0]}</h2>
+                                        </div>
                                         <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
                                     </>
                                    

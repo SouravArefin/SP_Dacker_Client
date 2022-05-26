@@ -65,6 +65,7 @@ else if (customRating == 1) {
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
    </div>
     }
+  
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -77,7 +78,7 @@ else if (customRating == 1) {
               }
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title">{user?.displayName}</h2>
+                <h2 className="card-title sp-style"><i>{user?.displayName}</i></h2>
                 <h1 className = "opacity-10">Posted On 11th January,2022</h1>
                 <p className='text-center'>{myIcon}</p>
                 <blockquote title={review} className='p-4 mt-3 bg-gray-200 italic border-l-4 rounded-lg text-neutral-600 border-neutral-500 quote w-4/6 mx-auto mb-7'>`{review.slice(0, 50)}`</blockquote>

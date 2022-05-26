@@ -178,9 +178,9 @@ const Login = () => {
             <div className="text-center ">
                 <button onClick={()=> signInWithGithub()}className='flex sign w-100 bg-white mt-5 items-center mx-auto google-button rounded '><img className='w-15 h-10 rounded-full mr-3' src={githubLogo} alt="" /><p className='ml-2  text-lg' style={{paddingRight:'30px'}}>Signin with GitHub</p></button>
             </div>
-            <div className="text-center ">
+            {/* <div className="text-center ">
                 <button style={{ backgroundColor: '#3B5998' }} onClick={handleFacebookSignIn} className='flex sign w-100 mt-5  items-center mx-auto google-button rounded facebook-sign'><img className='w-10 h-10  mr-3' src={fbLogo} alt="" /><p style={{paddingRight:'30px'}}className='ml-2 text-white text-lg'>Signin with FaceBook</p></button>
-            </div>
+            </div> */}
 
            
         

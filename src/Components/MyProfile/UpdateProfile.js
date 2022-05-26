@@ -135,18 +135,18 @@ const UpdateProfile = () => {
     return (
         <>
             <h1 className='mt-10 text-3xl text-center text-cyan-700 sp-style'>Update Your Profile</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 m-10'>
+            <div >
 
 
-                <form className='m-5' onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form-control w-full max-w-xs">
+                <form className='mt-10 text-3xl md:w-1/2 w-3/4 mx-auto text-center' onSubmit={handleSubmit(onSubmit)}>
+                    <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Update Name"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             {...register("displayName", {
 
                             })}
@@ -161,7 +161,7 @@ const UpdateProfile = () => {
                         <input
                             type="email"
                             placeholder="Update Email"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             value={authUser.email}
                             disabled
                         />
@@ -170,14 +170,14 @@ const UpdateProfile = () => {
                         </label>
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Number</span>
                         </label>
                         <input
                             type="number"
                             placeholder="Update Number"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             {...register("number", {
 
                             })}
@@ -186,14 +186,14 @@ const UpdateProfile = () => {
                             {errors.number?.type === 'required' && <span className="label-text-alt text-red-500">{errors.number.message}</span>}
                         </label>
                     </div>
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Address</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Update Address"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             {...register("address", {
 
                             })}
@@ -202,14 +202,14 @@ const UpdateProfile = () => {
                             {errors.address?.type === 'required' && <span className="label-text-alt text-red-500">{errors.address.message}</span>}
                         </label>
                     </div>
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">institute</span>
                         </label>
                         <input
                             type="text"
                             placeholder="Update institute"
-                            className="input input-bordered w-full max-w-xs"
+                            className="input input-bordered w-full "
                             {...register("institute", {
 
                             })}
@@ -219,13 +219,13 @@ const UpdateProfile = () => {
                         </label>
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text">Update Image</span>
                         </label>
                         <input
                             type="file"
-                            className="input input-bordered w-full max-w-xs cursor-pointer"
+                            className="input input-bordered w-full  cursor-pointer"
                             {...register("image", {
 
                             })}
@@ -235,7 +235,7 @@ const UpdateProfile = () => {
                         </label>
                     </div>
 
-                    <input className='btn w-full max-w-xs text-white bg-cyan-700' type="submit" value="Update" />
+                    <input className='btn w-full  text-white bg-cyan-700' type="submit" value="Update" />
                 </form>
             </div>
         </>

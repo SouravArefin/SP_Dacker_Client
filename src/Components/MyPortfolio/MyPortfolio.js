@@ -93,14 +93,18 @@ const MyPortfolio = () => {
                     </p>
                     <p className='text-green-700 sp-style my-3'>Skilled in HTML, CSS, Bootstrap, TailwindCSS, Javascript(ES6), and MERN (Mongo DB, Express, React, Node) stack, I also have sound knowledge of Data Structures and Algorithms with great problem-solving capabilities.</p>
 
-                    <p className='text-green-700 sp-style '>
-                        I can vouch for the fact that I am a fast learner with a penchant to both learn and unlearn; That is learning the latest relevant technologies and skills. I also bring with me some fresh ideas and I am confident you will find many of them to be quite useful and innovative.
-                    </p>
+                   
+                    <h1 className='text-2xl sp-style mt-10 text-cyan-700'>Educational Status: BSC in CSE at BGC Trust University.</h1>
+                    <h1 className='text-2xl sp-style text-cyan-700'>Contact Me at khansourav58@gmail.com or 01858557886</h1>
+                    <h1 className='text-2xl text-cyan-700'>For more information Download the Cv</h1>
+
+                    <button className='mt-10 text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'><a href="https://drive.google.com/file/d/1fSwWjoNO8Id3iOivxUym7J_A2GsvAOVG/view?usp=sharing" target='_blank'>DownLod Cv </a> </button>
 
                 </div>
                 <div className="image flex-1 md:ml-5 mt-10 md:mt-0">
                     <img className='md:w-1/2 md:ml-auto' src={myImage} alt="" />
                 </div>
+               
             </div>
             {/* Skills */}
 
@@ -124,7 +128,7 @@ const MyPortfolio = () => {
                         <div className="mx-3">
                             <a href="https://sp-express.netlify.app/">
                                 <img className='w-1/3 ml-auto object-fill' src={express} alt="" />
-//                             </a>
+                            </a>
                         </div>
 
                     </div>
