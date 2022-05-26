@@ -36,6 +36,7 @@ Both admin and user can update their profile on my profile page.
 * Tailwind css
 * Daisy Ui
 * Stripe
+* React Query
 
 ## Tools  are using in Back:
 * MongoDB
