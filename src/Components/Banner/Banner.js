@@ -14,7 +14,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 //banner
 import banner1 from '../../b-1.jpg'
 import banner2 from '../../b-2.jpg'
-
+import './Banner.module.css'
 
 
 const Banner = () => {

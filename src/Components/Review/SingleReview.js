@@ -1,32 +1,35 @@
 import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import unknownImage from '../../no-image.png'
 
-const GetReview = ({ r }) => {
-    const {rating} = r
-let myIcon;
-if(rating==4){
+const SingleReview = ({ singleReview }) => {
+    // console.log(singleReview)
+    const { user, customRating, review } = singleReview;
+    const img = user?.photoURL
+    let myIcon;
+if(customRating==4){
     myIcon = <div> <FontAwesomeIcon className='icon-color' icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
      </div>
 }
-else if(rating==4.8){
+else if(customRating==4.8){
     myIcon = <div> <FontAwesomeIcon className='icon-color' icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStarHalfStroke}></FontAwesomeIcon>   </div>
 }
-else if(rating==4.5){
+else if(customRating==4.5){
     myIcon = <div> <FontAwesomeIcon className='icon-color' icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStarHalfStroke}></FontAwesomeIcon>   </div>
 }
-else if (rating == 3) {
+else if (customRating == 3) {
   myIcon =  <>
             <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
@@ -35,7 +38,7 @@ else if (rating == 3) {
     </>
    
 }
-else if (rating == 3.5) {
+else if (customRating == 3.5) {
   myIcon=  <>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
 <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
@@ -45,14 +48,14 @@ else if (rating == 3.5) {
 </>
 }
     
-else if (rating == 2) {
+else if (customRating == 2) {
  myIcon =   <>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
 <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
 
 </>
 }
-else if (rating == 2.5) {
+else if (customRating == 2.5) {
     myIcon =   <>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
 <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
@@ -60,7 +63,7 @@ else if (rating == 2.5) {
 </>
     }
 
-else if (rating == 1) {
+else if (customRating == 1) {
     myIcon =   <>
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
  
@@ -74,28 +77,26 @@ else if (rating == 1) {
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
    </div>
     }
- 
-    
     return (
-        <div>
-            <div data-aos="flip-up" className="custom-shadow">
-
-                <div className="flex items-center mt-10 p-5 ">
-                  
-                    <div >
-                        <h1 className='sp-style text-blue-900 font-bold'>{r.name}</h1>
-                        <h1 className='opacity-10 text-primary'>Posted On 10th December,2021</h1>
-                    </div>
-
-                </div>
-              <p className='text-center'> {myIcon}</p>
-                <div>
-                    <p className="pl-20 pt-5 pb-5">`{r.opinion}`</p>
-                </div>
+        <div className="card w-96 bg-base-100 shadow-xl">
+            <figure className="px-10 pt-10">
+           
+                {
+                    img ?
+                    <img className="w-1/2 rounded-xl mx-auto" src={img} alt="Shoes"  />
+                        :
+                        <img className="w-1/2 rounded-xl mx-auto" src={unknownImage} alt="Shoes"  />
+              }
+            </figure>
+            <div className="card-body items-center text-center">
+                <h2 className="card-title">{user?.displayName}</h2>
+                <h1 className = "opacity-10">Posted On 11th January,2022</h1>
+                <p className='text-center'>{myIcon}</p>
+                <p className="text-blue-700 sp-style text-center font-bold">`{review}`</p>
 
             </div>
         </div>
     );
 };
 
-export default GetReview;
+export default SingleReview;

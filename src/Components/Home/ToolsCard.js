@@ -11,7 +11,7 @@ const ToolsCard = ({ tool, handlePurchase }) => {
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{details}</p>
-                <p>Price: ${price}</p>
+                <p>Price: ${price} per piece</p>
                 <p>Stock: {availableQuantity}</p>
                 <p>Minimum Order: {minOrderQuantity}</p>
                 <div className="card-actions justify-end">

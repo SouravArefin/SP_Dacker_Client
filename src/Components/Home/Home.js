@@ -11,7 +11,7 @@ import world from '../../world.jpg'
 import hand from '../../hand.jpg'
 import project from '../../project.jpg'
 import loader from '../../loading.gif'
-import ReviewCard from '../Review/ReviewCard';
+import ReviewSlider from '../Review/ReviewSlider'
 const Home = () => {
     const{id}=useParams()
     const [parts, setParts] = useParts()
@@ -66,7 +66,10 @@ const Home = () => {
                             </button>
                         <h1 className="text-5xl text-center text-rose-700 mt-10 sp-style">Our Customer's Review</h1>
 
-                        <ReviewCard/>
+                        <div className='container mx-auto  mb-10'>
+                <ReviewSlider></ReviewSlider>
+            </div>
+
             </div>
                     
         }
