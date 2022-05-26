@@ -118,7 +118,21 @@ color: var(--secondery);
 .active{
   color: #11adb8;
 }
+.auto-type span {
+  font-size: 50px;
+  font-weight: 700;
+  font-family:Times New Roman, Times, serif;
+  color:#6b2d04
+}
 
+/* Portfolio width */
+.custom-width {
+    width: 130%;
+}
+.auto-type p {
+  line-height: 1.7;
+  word-spacing: 1px;
+}
 
 /* Nav item order */
 .nav-item {

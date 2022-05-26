@@ -14,6 +14,7 @@ import loader from '../../loading.gif'
 import ReviewSlider from '../Review/ReviewSlider'
 import GetTouch from './GetTouch';
 import wave from '../../waves.svg'
+import Accordion from './Accordion.js'
 const Home = () => {
     const{id}=useParams()
     const [parts, setParts] = useParts()
@@ -79,15 +80,32 @@ const Home = () => {
                         <button  className="happy mt-10 bg-primary hover:bg-[#141414]  px-4 py-2 mb-2 rounded-full text-white" onClick={() => navigate('/parts')}>
                                  More Tools
                             </button>
-                        <h1 className="text-5xl text-center text-rose-700 mt-10 sp-style">Our Customer's Review</h1>
-
+                        <h1 className="md:text-5xl text-2xl sp-style text-center text-rose-700 mt-10 sp-style">Our Client's Review</h1>
                         <div className='container mx-auto  mb-10'>
                 <ReviewSlider></ReviewSlider>
                         </div>
                         
                       <GetTouch/>
 
-                     
+                     {/* extra section */}
+
+                     <h1 className='text-uppercase text-center text-amber-700 sp-style text-4xl md:text-5xl mt-20 font-semibold custom-border-primary w-fit mx-auto pb-4 mb-5'>Frequently Asked Questions</h1>
+
+                     <div className='container mx-auto'>
+                <Accordion title="What Kind Of Products Do You Supply?" content="We provide the best tools in Bangladesh for small business and entrepreneurs. We're community-powered software for social media marketing and analytics. Stop struggling to get better at social media and get great results now. It's easy to get started at BoldTap!Build a presence in LinkedIn Marketing. Instant growth and ROI by using the BoldTap Social Analytics Platform." />
+
+                <Accordion
+                    title="Do You Supply Products Outside Bangladesh?"
+                    content="Yes. We supply outside Bangladesh for the making of quality tools, so our first product is by far and away our own product, which we pride ourselves in. And the sourcing of the factories to make these and obviously the manufacturing are in the hands of JW Boston. So that's where the quality and the high-quality of this product is, and we are very, very proud of the quality of the material we use. I think we've talked about this before but most T-shirts you can buy in the shop this year have been made in America, in a factory. A lot of them are made in China.
+                    "/>
+
+                <Accordion
+                    title="Do You Supply in All Over Bangladesh?"
+                    content=" <p>Yes we supply our tools all over Bangladesh and are planning on all over the world, but the real win is that we do it for less than we could.Today we sold our screws for 7E and then sold them again for $3.What a steal and we even have more.The barber pole and welder are for the boy.It's a tote where we can put everything together so he doesn't have to go digging for anything he needs.It's been a great system for keeping him busy.</p>"
+                />
+            </div>
+
+
 
             </div>
                     
