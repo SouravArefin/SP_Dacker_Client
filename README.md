@@ -14,7 +14,7 @@ Sp_Deckar is a Mern-Stack Website. When User login in the site they can see a ho
 They can see which user has made their payment.When user can pay their payment,admin can deliver it.When the admin delivers the product, the user receives a message in their My Order Dashboard.
 Both admin and user can update their profile on my profile page.
 
-## Features of this Website:
+## Features and Functions of this Website:
 * Admin Can manage Order
 * Admin Can manage products
 * User can purchase a product by credit card
