@@ -18,7 +18,7 @@ export default function App() {
     const copyReview = [...reviewes]
     const reverseReview = copyReview.reverse()
     useEffect(() => {
-        fetch("http://localhost:4000/reviews/")
+        fetch("https://salty-reef-27679.herokuapp.com/reviews/")
             .then(res => res.json())
             .then(res => {
                 setReviewes(res);

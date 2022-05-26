@@ -9,16 +9,16 @@ const ManageTable = ({ o, index, refetch, sendEvent, setModal, isLoading }) => {
 
     //console.log(o)
 
-    const { _id,isDeliverd, transactionId,ship, paid, img, productName, userName, email, number, price, quantity, address } = o
-    
-    const [user]=useAuthState(auth)
+    const { _id, isDeliverd, transactionId, ship, paid, img, productName, userName, email, number, price, quantity, address } = o
+
+    const [user] = useAuthState(auth)
     const makeShip = () => {
-        fetch(`http://localhost:4000/ship/${_id}`, {
+        fetch(`https://salty-reef-27679.herokuapp.com/ship/${_id}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             },
-            body:JSON.stringify({isDeliverd:true})
+            body: JSON.stringify({ isDeliverd: true })
         }
 
         )
@@ -28,7 +28,7 @@ const ManageTable = ({ o, index, refetch, sendEvent, setModal, isLoading }) => {
                     refetch()
                     toast.success('On the way for Delivery')
                 }
-                else { 
+                else {
                     toast.error(`Can't Shipped`)
                 }
             })
@@ -54,43 +54,43 @@ const ManageTable = ({ o, index, refetch, sendEvent, setModal, isLoading }) => {
             <td><span className="font-bold">{address}</span></td>
             <td><span className="font-bold">{number}</span></td>
             <td>{
-                transactionId ?<span className='text-amber-700 font-bold'>{transactionId}</span> 
+                transactionId ? <span className='text-amber-700 font-bold'>{transactionId}</span>
                     :
                     <span className='text-xl sp-style text-red-700'> can't receive the money yet
-                    
+
                     </span>
-            
+
             }</td>
             {
                 paid ? <>
 
                     <td>
                         <p className='text-xl font-bold text-green-700 sp-style'>receive'd Money
-                        <FontAwesomeIcon className='pl-2'icon={faCheck}></FontAwesomeIcon>
+                            <FontAwesomeIcon className='pl-2' icon={faCheck}></FontAwesomeIcon>
                         </p>
                     </td>
                     <td>
                         {
                             isDeliverd ? <p className='text-xl font-bold text-blue-700 sp-style'>Delivery Done
-                             <FontAwesomeIcon className='pl-2'icon={faCheck}></FontAwesomeIcon>
-                            
+                                <FontAwesomeIcon className='pl-2' icon={faCheck}></FontAwesomeIcon>
+
                             </p> : <button onClick={makeShip} className="text-white bg-cyan-700   font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2">Ship
-                            
-                            <FontAwesomeIcon className='pl-2'icon={faShippingFast}></FontAwesomeIcon> 
-                                </button>
+
+                                <FontAwesomeIcon className='pl-2' icon={faShippingFast}></FontAwesomeIcon>
+                            </button>
                         }
-                        
+
                     </td>
                 </>
                     :
                     <>
                         <td>
-                            <label onClick={() => setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Delete
-                            <FontAwesomeIcon className='pl-2'icon={faTrashRestoreAlt}></FontAwesomeIcon>
+                            <label onClick={() => setModal(o)} htmlFor="deleteModal" className="bg-red-700 btn modal-button">Delete
+                                <FontAwesomeIcon className='pl-2' icon={faTrashRestoreAlt}></FontAwesomeIcon>
                             </label></td>
                         <td>
                             <p className='text-xl font-bold text-red-700 sp-style'>Not Paid Yet
-                            <FontAwesomeIcon className='pl-2'icon={faBan}></FontAwesomeIcon>
+                                <FontAwesomeIcon className='pl-2' icon={faBan}></FontAwesomeIcon>
                             </p>
                         </td>
 

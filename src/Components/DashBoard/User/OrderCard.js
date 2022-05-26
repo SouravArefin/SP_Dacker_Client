@@ -36,7 +36,7 @@ const OrderCard = ({ o, index, refetch,sendEvent,setModal }) => {
         <td>
         {
            (price && !o.paid) &&   
-            <label onClick={() => setModal(o)} htmlFor="deleteModal" className="bg-primary btn modal-button">Cancel
+            <label onClick={() => setModal(o)} htmlFor="deleteModal" className="bg-red-700 btn modal-button">Cancel
             <FontAwesomeIcon className='pl-2'icon={faTrashRestoreAlt}></FontAwesomeIcon>
               
               </label>

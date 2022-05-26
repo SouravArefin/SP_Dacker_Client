@@ -14,7 +14,7 @@ const UpdateProfile = () => {
     // console.log(user);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/user/${authUser?.email}`, {
+        fetch(`https://salty-reef-27679.herokuapp.com/user/${authUser?.email}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -42,7 +42,7 @@ const UpdateProfile = () => {
         const image = data?.image[0];
         const formData = new FormData();
         formData.append("image", image);
-        const url =` https://api.imgbb.com/1/upload?key=c0749433704e7ac8ba2e6b642a43ad51`
+        const url = ` https://api.imgbb.com/1/upload?key=c0749433704e7ac8ba2e6b642a43ad51`
         console.log(url);
         if (data?.image[0]) {
             fetch(url, {
@@ -59,17 +59,17 @@ const UpdateProfile = () => {
                             number: data.number || user?.number || "N/A",
                             address: data.address || user?.address || "N/A",
                             institute: data.institute || user?.institute || "N/A",
-                           img:
+                            img:
                                 img ||
                                 "https://foxdogconsultants.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png",
                         };
                         console.log(userInfo);
-                        fetch(`http://localhost:4000/user/${authUser.email}`, {
+                        fetch(`https://salty-reef-27679.herokuapp.com/user/${authUser.email}`, {
                             method: "PUT",
                             headers: {
                                 "Content-Type": "application/json",
-                                email:` ${authUser?.email}`,
-                                authorization:` Bearer ${localStorage.getItem("token")}`,
+                                email: ` ${authUser?.email}`,
+                                authorization: ` Bearer ${localStorage.getItem("token")}`,
                             },
                             body: JSON.stringify(userInfo),
                         })
@@ -102,7 +102,7 @@ const UpdateProfile = () => {
                     "https://foxdogconsultants.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png",
             };
             // console.log(userInfo);
-            fetch(`http://localhost:4000/user/${authUser.email}`, {
+            fetch(`https://salty-reef-27679.herokuapp.com/user/${authUser.email}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -117,7 +117,7 @@ const UpdateProfile = () => {
                     toast.success("Profile Updated Successfully");
                     updateProfile({
                         name: data?.displayName || authUser?.displayName || "N/A",
-                      img:
+                        img:
                             user?.photoURL ||
                             authUser?.photoURL ||
                             "https://foxdogconsultants.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png",
@@ -136,7 +136,7 @@ const UpdateProfile = () => {
         <>
             <h1 className='mt-10 text-3xl text-center text-cyan-700 sp-style'>Update Your Profile</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 m-10'>
-           
+
 
                 <form className='m-5' onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-control w-full max-w-xs">

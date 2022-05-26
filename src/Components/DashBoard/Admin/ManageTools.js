@@ -6,11 +6,11 @@ import Modal from '../Modal';
 import ToolCard from './ToolCard';
 
 const ManageTools = () => {
-    const [modal,setModal] = useState({})
-    const { data:allParts, isLoading,refetch } = useQuery('allParts', () => fetch(`http://localhost:4000/parts`, {
+    const [modal, setModal] = useState({})
+    const { data: allParts, isLoading, refetch } = useQuery('allParts', () => fetch(`https://salty-reef-27679.herokuapp.com/parts`, {
         method: 'GET',
         headers: {
-            authorization:`Bearer ${localStorage.getItem('token')}`
+            authorization: `Bearer ${localStorage.getItem('token')}`
         }
     }).then(res => res.json()))
 
@@ -18,7 +18,7 @@ const ManageTools = () => {
         return <Spinner />
     }
 
-   
+
     const partsDelete = (id) => {
         console.log("id want to delete", id);
         // const confirmMsg = window.confirm("Are you sure?")
@@ -27,46 +27,46 @@ const ManageTools = () => {
         //     console.log("delete with id", id)
 
 
-            fetch(`http://localhost:4000/parts/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    'content-type':'application/json',
-                     'authorization': `Bearer ${localStorage.getItem('token')}`
+        fetch(`https://salty-reef-27679.herokuapp.com/parts/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${localStorage.getItem('token')}`
+            }
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount) {
+                    setModal({})
+                    refetch()
+                    toast.success('Tools delete successfully')
                 }
 
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount) {
-                        setModal({})
-                        refetch()
-                        toast.success('Tools delete successfully')
-                    }
-                   
-                })
-          
-        }
-        // else {
-        //     toast.error('ok,No problem')
-        // }
+
+    }
+    // else {
+    //     toast.error('ok,No problem')
+    // }
 
 
-    
+
     return (
         <div>
-         {allParts?.length ? <h1 className='font-bold text-2xl sp-style text-blue-900 mt-10'>Here is the {allParts?.length} {allParts?.length==1 ?'Tool':'Tools'}:-</h1> : <h1 className='font-bold text-2xl sp-style text-red-900 mt-10'>There is no Tools.Add Some Tools</h1>}
-          
+            {allParts?.length ? <h1 className='font-bold text-2xl sp-style text-blue-900 mt-10'>Here is the {allParts?.length} {allParts?.length == 1 ? 'Tool' : 'Tools'}:-</h1> : <h1 className='font-bold text-2xl sp-style text-red-900 mt-10'>There is no Tools.Add Some Tools</h1>}
+
             {
                 modal?._id && <Modal
                     modal={modal}
-            setModal={setModal}
-                sendEvent={partsDelete}
-              
-                
+                    setModal={setModal}
+                    sendEvent={partsDelete}
+
+
                 ></Modal>
             }
-         <div className=" mt-10 mb-10">
+            <div className=" mt-10 mb-10">
                 <table className="table w-full">
 
                     <thead>
@@ -79,21 +79,21 @@ const ManageTools = () => {
                             <th>Minimum-Order</th>
                             <th>Details</th>
                             <th colspan='2'>Manage</th>
-                           
-                           
+
+
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                           allParts?.map((o, index) => <ToolCard
-                            key={o._id}
-                            o={o}
+                            allParts?.map((o, index) => <ToolCard
+                                key={o._id}
+                                o={o}
                                 index={index}
                                 refetch={refetch}
-                               sendEvent={partsDelete}
-                               setModal={setModal}
-                        ></ToolCard>)
+                                sendEvent={partsDelete}
+                                setModal={setModal}
+                            ></ToolCard>)
                         }
                     </tbody>
                 </table>

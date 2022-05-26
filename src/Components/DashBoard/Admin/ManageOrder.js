@@ -5,11 +5,11 @@ import Spinner from '../../Spinner/Spinner';
 import Modal from '../Modal';
 import ManageTable from './ManageTable'
 const ManageOrder = () => {
-    const [modal,setModal] = useState({})
-     const { data: allorders, isLoading,refetch } = useQuery('allorders', () => fetch(`http://localhost:4000/orders`, {
+    const [modal, setModal] = useState({})
+    const { data: allorders, isLoading, refetch } = useQuery('allorders', () => fetch(`https://salty-reef-27679.herokuapp.com/orders`, {
         method: 'GET',
         headers: {
-            authorization:`Bearer ${localStorage.getItem('token')}`
+            authorization: `Bearer ${localStorage.getItem('token')}`
         }
     }).then(res => res.json()))
 
@@ -24,46 +24,46 @@ const ManageOrder = () => {
         //     console.log("delete with id", id)
 
 
-            fetch(`http://localhost:4000/order/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    "content-type":"application/json",
-                    authorization: `Bearer ${localStorage.getItem('token')}`
-                }
+        fetch(`https://salty-reef-27679.herokuapp.com/order/${id}`, {
+            method: 'DELETE',
+            headers: {
+                "content-type": "application/json",
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
 
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount) {
+                    refetch()
+                    setModal({})
+                    toast.success('Order delete successfully')
+                }
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount) {
-                        refetch()
-                        setModal({})
-                        toast.success('Order delete successfully')
-                    }
-                })
-            
-        }
- 
+
+    }
+
     return (
         <div>
-         {allorders?.length ? <h1 className='font-bold text-2xl sp-style text-blue-900 mt-10'>Here is the {allorders?.length} {allorders?.length==1 ?'order':'orders'}:-</h1> : <h1 className='font-bold text-2xl sp-style text-red-900 mt-10'>There is no Order</h1>}
-          
-            
+            {allorders?.length ? <h1 className='font-bold text-2xl sp-style text-blue-900 mt-10'>Here is the {allorders?.length} {allorders?.length == 1 ? 'order' : 'orders'}:-</h1> : <h1 className='font-bold text-2xl sp-style text-red-900 mt-10'>There is no Order</h1>}
 
 
-         {
+
+
+            {
                 modal?._id && <Modal
                     modal={modal}
-            setModal={setModal}
-                sendEvent={orderDelete}
-              
-                
+                    setModal={setModal}
+                    sendEvent={orderDelete}
+
+
                 ></Modal>
             }
 
 
 
-         <div className="overflow-x-auto mt-10">
+            <div className="overflow-x-auto mt-10">
                 <table className="table w-full">
 
                     <thead>
@@ -79,22 +79,22 @@ const ManageOrder = () => {
                             <th>Phone</th>
                             <th>transaction Id</th>
                             <th colspan='2'>Action</th>
-                           
-                           
+
+
                         </tr>
                     </thead>
                     <tbody>
 
                         {
                             allorders?.map((o, index) => <ManageTable
-                            key={o._id}
-                            o={o}
+                                key={o._id}
+                                o={o}
                                 index={index}
-                                refetch ={refetch }
+                                refetch={refetch}
                                 sendEvent={orderDelete}
                                 setModal={setModal}
-                                isLoading={ isLoading}
-                        ></ManageTable>)
+                                isLoading={isLoading}
+                            ></ManageTable>)
                         }
                     </tbody>
                 </table>

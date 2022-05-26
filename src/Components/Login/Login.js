@@ -159,7 +159,7 @@ const Login = () => {
             </form>
             <p className=" font-bold mt-2 ">
 
-                New To <span className='text-red-900 sp-style text-4xl'>Sp</span><span className='sp-style text-xl text-red-700'>Deckar</span> ? <Link className='form-link' to='/signup'><span className='text-red-700'>Create an Account</span></Link>
+                New To <span className='text-sky-900 sp-style text-4xl'>Sp</span>_<span className='sp-style text-xl text-sky-700'>Deckar</span> ? <Link className='form-link' to='/signup'><span className='text-red-700'>Create an Account</span></Link>
 
             </p>
             <p >

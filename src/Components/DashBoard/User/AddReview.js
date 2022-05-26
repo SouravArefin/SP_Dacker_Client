@@ -11,39 +11,39 @@ const AddReview = () => {
     const [customRating, setCustomRating] = React.useState(0);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const email = user?.email
-    const { data: orders, isLoading,refetch } = useQuery('orders', () => fetch(`http://localhost:4000/singleOrder?email=${email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://salty-reef-27679.herokuapp.com/singleOrder?email=${email}`, {
         method: 'GET',
         headers: {
-            authorization:`Bearer ${localStorage.getItem('token')}`
+            authorization: `Bearer ${localStorage.getItem('token')}`
         }
     }).then(res => res.json()))
-    console.log(orders,'orders');
-    const onSubmitReview = (data,e) => {
+    console.log(orders, 'orders');
+    const onSubmitReview = (data, e) => {
         const userReview = {
             customRating,
             review: data.review,
             user
         }
-        if (orders.length===0) {
+        if (orders.length === 0) {
             toast.error('Please,at least order one product for giving review')
         }
         else {
-            fetch('http://localhost:4000/review/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(userReview)
-        })
-            .then(res => res.json())
-            .then(res => {
-                console.log(res);
-                e.target.reset()
-                toast.success('Thanks for your valuable feedback')
-            }
-            );
+            fetch('https://salty-reef-27679.herokuapp.com/review/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userReview)
+            })
+                .then(res => res.json())
+                .then(res => {
+                    console.log(res);
+                    e.target.reset()
+                    toast.success('Thanks for your valuable feedback')
+                }
+                );
         }
-        
+
 
     }
     return (

@@ -12,6 +12,7 @@ import hand from '../../hand.jpg'
 import project from '../../project.jpg'
 import loader from '../../loading.gif'
 import ReviewSlider from '../Review/ReviewSlider'
+
 const Home = () => {
     const{id}=useParams()
     const [parts, setParts] = useParts()
@@ -68,7 +69,11 @@ const Home = () => {
 
                         <div className='container mx-auto  mb-10'>
                 <ReviewSlider></ReviewSlider>
-            </div>
+                        </div>
+                        
+                      
+
+                     
 
             </div>
                     

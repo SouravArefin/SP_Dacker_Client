@@ -12,9 +12,9 @@ const PaymentForm = ({ myOrder }) => {
     console.log(success, transactionId, 'sucess---tramsid');
     const [clientSecret, setClientSecret] = useState('');
 
-    const { _id, price, userName,email } = myOrder;
+    const { _id, price, userName, email } = myOrder;
     useEffect(() => {
-        fetch('http://localhost:4000/create-payment-intent', {
+        fetch('https://salty-reef-27679.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -77,7 +77,7 @@ const PaymentForm = ({ myOrder }) => {
                 myOrder: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:4000/orderPay/${_id}`, {
+            fetch(`https://salty-reef-27679.herokuapp.com/orderPay/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

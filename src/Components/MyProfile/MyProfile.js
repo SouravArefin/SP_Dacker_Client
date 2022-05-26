@@ -18,13 +18,13 @@ const MyProfile = () => {
     const navigate = useNavigate();
     // console.log(user)
     if (loading) {
-        return <Spinner/>
+        return <Spinner />
     }
 
     // useEffect(() => {
     const getItems = async () => {
         const email = signedUser?.email
-        const url =`http://localhost:4000/user/${email}`
+        const url = `https://salty-reef-27679.herokuapp.com/user/${email}`
         // console.log(url);
         try {
             const { data } = await axios.get(url, {

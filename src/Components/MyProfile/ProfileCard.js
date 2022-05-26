@@ -1,8 +1,13 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../../firebase.init';
 import noImg from '../../no-image.png'
 const ProfileCard = ({ singleUser }) => {
-    const { name, email, img, role,number,address,institute,_id } = singleUser;
+    const { name, email, img, role, number, address, institute, _id } = singleUser;
+    console.log(singleUser);
+    const [profileUser] = useAuthState(auth)
+    const profileName = name || profileUser.displayName
    // console.log(singleUser)
     const navigate = useNavigate();
 
@@ -18,7 +23,7 @@ const ProfileCard = ({ singleUser }) => {
                     img ? <img src={img} alt="John" style={{ width: "100%" }} />
                         :    <img src={noImg} alt="John" style={{ width: "100%" }} />
              }
-                <h1 className='pt-5 sp-style text-blue-700 font-bold'>Name: {name}</h1>
+                <h1 className='pt-5 sp-style text-blue-700 font-bold'>Name: {profileName}</h1>
                 <h1 className='sp-style font-bold'>Email: {email}</h1>
                 <h1 className='sp-style font-bold'>Number: {
                     number ? number : "N/A"

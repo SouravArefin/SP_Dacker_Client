@@ -23,10 +23,10 @@ const Purchase = () => {
         if (!inputQuantity) {
             toast.error('Give the quantity value')
         }
-       else if (inputQuantity > availableQuantity) {
+        else if (inputQuantity > availableQuantity) {
             toast.error(`Sorry ${user.displayName} !! We dont have enough quantity`);
         } else if (inputQuantity < minOrderQuantity) {
-             toast.error(`Sorry ${user.displayName} !!You have to order Minimum  quantity  ${minOrderQuantity}`);
+            toast.error(`Sorry ${user.displayName} !!You have to order Minimum  quantity  ${minOrderQuantity}`);
         } else {
 
             setQuantity(inputQuantity)
@@ -36,7 +36,7 @@ const Purchase = () => {
     }
 
     //handle submit
-    const handleSubmitParam = (data,e) => {
+    const handleSubmitParam = (data, e) => {
         const userName = user?.displayName;
         const userInput = {
             userName,
@@ -45,24 +45,24 @@ const Purchase = () => {
             address: data?.address,
             quantity: quantity,
             price: quantity * price,
-            productName: name, 
-            img:image,
+            productName: name,
+            img: image,
         }
 
         console.log(userInput);
-        axios.post('http://localhost:4000/order',userInput)
+        axios.post('https://salty-reef-27679.herokuapp.com/order', userInput)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
                     toast.success('Your order is booked')
-                   e.target.reset()
-                 }
-        })
+                    e.target.reset()
+                }
+            })
 
 
     }
     useEffect(() => {
-        fetch(`http://localhost:4000/parts/${id}`)
+        fetch(`https://salty-reef-27679.herokuapp.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [id])
@@ -84,12 +84,12 @@ const Purchase = () => {
             </div>
 
             <div className="card-body">
-               
+
 
                 <PurchaseForm handleSubmitParam={handleSubmitParam} tool={tool} quantity={quantity}></PurchaseForm>
 
             </div>
-           
+
         </div>
     );
 };

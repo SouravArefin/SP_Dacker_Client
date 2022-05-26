@@ -9,7 +9,7 @@ const AddTools = () => {
 
 
     const imageSotrageKey = `c0749433704e7ac8ba2e6b642a43ad51`
-  
+
     const handleAddProduct = async data => {
         const image = data.image[0]
         const url = `https://api.imgbb.com/1/upload?key=${imageSotrageKey}`
@@ -18,22 +18,22 @@ const AddTools = () => {
         fetch(url, {
             method: 'POST',
             body: formData
-})
-            .then(res=>res.json())
+        })
+            .then(res => res.json())
             .then(result => {
                 if (result.success) {
                     const img = result.data.url;
-                    console.log(img,'img-url');
+                    console.log(img, 'img-url');
                     const tools = {
                         name: data.name,
                         price: data.price,
                         availableQuantity: data.availableQuantity,
-                        minOrderQuantity:data.minOrderQuantity,
-                        details:data.details,
-                        image:img
+                        minOrderQuantity: data.minOrderQuantity,
+                        details: data.details,
+                        image: img
                     }
                     //send data to db
-                    fetch(`http://localhost:4000/parts`, {
+                    fetch(`https://salty-reef-27679.herokuapp.com/parts`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -43,25 +43,25 @@ const AddTools = () => {
                     })
                         .then(res => res.json())
                         .then(inserted => {
-                
+
                             if (inserted.insertedId) {
                                 toast.success(`Hurray!!New tools. ${data.name} added successfully`);
-                        
-                               reset()
+
+                                reset()
                             }
-                            else { 
+                            else {
                                 toast.error('Failed to add a tools')
                             }
                         }
-                    
-                            
+
+
                         )
                 }
-                
-                console.log('imgbb',result);
-        })
 
-        
+                console.log('imgbb', result);
+            })
+
+
     }
     return (
         <div>
@@ -163,9 +163,9 @@ const AddTools = () => {
                     </label>
                 </div>
 
-                
 
-            
+
+
 
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
@@ -188,7 +188,7 @@ const AddTools = () => {
 
                 <input className='btn w-full max-w-xs text-white bg-primary' type="submit" value="Add" />
             </form>
-            
+
         </div>
     );
 };

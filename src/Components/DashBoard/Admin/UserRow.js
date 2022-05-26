@@ -2,14 +2,14 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import noImage from '../../../no-image.png'
 const UserRow = ({ user, index, refetch }) => {
-    const { email, role,name,img } = user
+    const { email, role, name, img } = user
     const makeAdmin = () => {
-        fetch(`http://localhost:4000/user/admin/${email}`, {
+        fetch(`https://salty-reef-27679.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
-        } 
+        }
 
         )
             .then(res => res.json())
@@ -18,7 +18,7 @@ const UserRow = ({ user, index, refetch }) => {
                     refetch()
                     toast.success('SuccessFully make a admin')
                 }
-                else { 
+                else {
                     toast.error(`Sorry!!! You can't make anyone admin.Only admin can make other's admin`)
                 }
             })
@@ -29,25 +29,25 @@ const UserRow = ({ user, index, refetch }) => {
             <th>{index + 1}</th>
             <td>
                 {
-                    img ?<div class="avatar">
-                    <div class="w-20 rounded">
-                      <img src={img} alt="Tailwind-CSS-Avatar-component" />
-                    </div>
+                    img ? <div class="avatar">
+                        <div class="w-20 rounded">
+                            <img src={img} alt="Tailwind-CSS-Avatar-component" />
+                        </div>
                     </div>
                         :
                         <div class="avatar">
-  <div class="w-20 rounded">
-    <img src={noImage} alt="Tailwind-CSS-Avatar-component" />
-  </div>
-                </div>
-}
+                            <div class="w-20 rounded">
+                                <img src={noImage} alt="Tailwind-CSS-Avatar-component" />
+                            </div>
+                        </div>
+                }
 
 
             </td>
             <td><span className="font-bold">{name}</span></td>
             <td><span className="font-bold">{email}</span></td>
             <td>{role ? <span className='text-green-700 sp-style'> Admin</span> : <button onClick={makeAdmin} className="btn btn-xs">Promote</button>}</td>
-          
+
         </tr>
 
     );

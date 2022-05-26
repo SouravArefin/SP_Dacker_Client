@@ -8,17 +8,17 @@ import UserRow from './UserRow';
 const AllUser = () => {
 
 
-    const { data: allUsers, isLoading,refetch } = useQuery('allUsers', () => fetch(`http://localhost:4000/user`, {
+    const { data: allUsers, isLoading, refetch } = useQuery('allUsers', () => fetch(`https://salty-reef-27679.herokuapp.com/user`, {
         method: 'GET',
         headers: {
-            authorization:`Bearer ${localStorage.getItem('token')}`
+            authorization: `Bearer ${localStorage.getItem('token')}`
         }
     }).then(res => res.json()))
 
     if (isLoading) {
         return <Spinner />
     }
-   // console.log(allUsers)
+    // console.log(allUsers)
     return (
         <div >
             <h2 className='text-2xl'>Total User : {allUsers.length}</h2>
@@ -32,7 +32,7 @@ const AllUser = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>User  / admin</th>
-                           
+
                         </tr>
                     </thead>
 
@@ -40,16 +40,16 @@ const AllUser = () => {
 
                         {
                             allUsers?.map((user, index) => <UserRow
-                            key={user._id}
-                            user={user}
+                                key={user._id}
+                                user={user}
                                 index={index}
-                                refetch ={refetch }
-                        ></UserRow>)
+                                refetch={refetch}
+                            ></UserRow>)
                         }
                     </tbody>
                 </table>
             </div>
-          
+
         </div>
     );
 };

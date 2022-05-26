@@ -56,7 +56,7 @@ const Navbar = () => {
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
                               
-                                <h1 className='sp-style text-rose-700'><span className='text-6xl text-red-900 sp-style'>Sp</span> <span  className='text-sm sp-style font-bold'>Decker</span></h1>
+                                <h1 className='sp-style font-bold text-sky-700'><span className='text-6xl text-sky-900 sp-style'>Sp</span> <span  className='text-sm sp-style font-bold'>Deckar</span></h1>
                             </div>
                             <div className="hidden md:flex justify-between md:ml-auto">
                                 <div className="nav-item ml-10 flex items-baseline space-x-4 text-lg">
@@ -109,14 +109,7 @@ const Navbar = () => {
                                         <>
 
                                             <NavLink className="nav-btn px-3 py-2 sp-style rounded-md text-xl font-bold" to="/dashboard">DashBoard</NavLink>
-                                            {/* <NavLink
-                                        to='/my-profile'
-                                                className="
-                                        
-                                        sp-style        nav-btn px-3 py-2 rounded-md text-xl font-bold"
-                                    >
-                                        My Profile
-                                    </NavLink> */}
+                                     
 
                                         </>
 
@@ -127,7 +120,7 @@ const Navbar = () => {
                                 {
                                     user ?
                                         <>
-                                            <h1 className='text-primary text-l sp-style mt-2 font-bold'>{user.displayName}</h1>
+                                            <h1 className='text-rose-700 text-l sp-style mt-2 font-bold'>{user.displayName}</h1>
                                             <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
                                         </>
                                         :
@@ -141,7 +134,7 @@ const Navbar = () => {
                             {
                                 user ?
                                     <>
-                                        <h2 className="text-primary sp-style text-l font-bold mt-5">{user.displayName}</h2>
+                                        <h2 className="text-rose-700 sp-style text-l font-bold mt-5">{user.displayName}</h2>
                                         <button onClick={logout} className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'>Sign Out <FontAwesomeIcon icon={faSignOut} /></button>
                                     </>
                                    
@@ -245,12 +238,7 @@ const Navbar = () => {
                                     user &&
                                     <>
                                         <NavLink className="text-black hover:bg-gray-700 hover:text-white block px-3  sp-style py-2 rounded-md text-base font-bold" to="/dashboard">Dashboard</NavLink>
-                                        {/* <NavLink
-                                    to="/my-profile"
-                                    className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
-                                >
-                                    My Profile
-                                </NavLink> */}
+                               
                                     </>
 
 
