@@ -36,7 +36,7 @@ Both admin and user can update their profile on my profile page.
 * Daisy Ui
 * Stripe
 
-##Tools  are using in Back:
+## Tools  are using in Back:
 * MongoDB
 * NodeMon
 * Body-Parser
