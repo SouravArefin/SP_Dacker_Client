@@ -22,7 +22,7 @@ Both admin and user can update their profile on my profile page.
 * Both user and admin update their profile
 
 
-## products are using in front:
+## Tools are using in front:
 * Axios
 *  React font-awsome
 * React icons
@@ -36,7 +36,7 @@ Both admin and user can update their profile on my profile page.
 * Daisy Ui
 * Stripe
 
-## products are using in Back:
+##Tools  are using in Back:
 * MongoDB
 * NodeMon
 * Body-Parser
