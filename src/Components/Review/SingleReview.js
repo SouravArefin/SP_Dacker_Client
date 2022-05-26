@@ -15,20 +15,8 @@ if(customRating==4){
     <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
      </div>
 }
-else if(customRating==4.8){
-    myIcon = <div> <FontAwesomeIcon className='icon-color' icon={faStar}></FontAwesomeIcon>
-    <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
-    <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
-    <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
-    <FontAwesomeIcon className='icon-color'icon={faStarHalfStroke}></FontAwesomeIcon>   </div>
-}
-else if(customRating==4.5){
-    myIcon = <div> <FontAwesomeIcon className='icon-color' icon={faStar}></FontAwesomeIcon>
-    <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
-    <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
-    <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
-    <FontAwesomeIcon className='icon-color'icon={faStarHalfStroke}></FontAwesomeIcon>   </div>
-}
+
+
 else if (customRating == 3) {
   myIcon =  <>
             <FontAwesomeIcon className='icon-color'icon={faStar}></FontAwesomeIcon>
@@ -92,7 +80,7 @@ else if (customRating == 1) {
                 <h2 className="card-title">{user?.displayName}</h2>
                 <h1 className = "opacity-10">Posted On 11th January,2022</h1>
                 <p className='text-center'>{myIcon}</p>
-                <p className="text-blue-700 sp-style text-center font-bold">`{review}`</p>
+                <blockquote title={review} className='p-4 mt-3 bg-gray-200 italic border-l-4 rounded-lg text-neutral-600 border-neutral-500 quote w-4/6 mx-auto mb-7'>`{review.slice(0, 50)}`</blockquote>
 
             </div>
         </div>
