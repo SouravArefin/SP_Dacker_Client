@@ -97,15 +97,15 @@ const Data = {
         },
         {
             type: "MongoDB",
-            level: 70,
+            level: 60,
             range: 2
         }
     ],
     colors: {
-        bar: "red",
+        bar: "primary",
         title: {
             text: "#fff",
-            background: "green"
+            background: "primary"
         }
     },
 

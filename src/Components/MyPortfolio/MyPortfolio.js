@@ -6,6 +6,8 @@ import ware from '../../warehouse.png'
 import zone from '../../zone.png'
 import express from '../../express.png'
 import SkillsData from './SkillData';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const MyPortfolio = () => {
     return (
@@ -34,7 +36,7 @@ const MyPortfolio = () => {
                     <p className='text-gray-500'>
                         I can vouch for the fact that I am a fast learner with a penchant to both learn and unlearn; That is learning the latest relevant technologies and skills. I also bring with me some fresh ideas and I am confident you will find many of them to be quite useful and innovative.
                     </p>
-
+                    <button className='text-white bg-gradient-to-r from-primary to-secondary border-2 border-secondary hover:border-2 hover:border-primary hover:bg-gradient hover:from-white hover:to-white hover:text-primary transition-all transition-duration:150ms font-medium hover:font-medium px-5 py-[10px] rounded-md ml-2'><a href="https://drive.google.com/file/d/1fSwWjoNO8Id3iOivxUym7J_A2GsvAOVG/view?usp=sharing" target='_blank'>DownLod Cv </a> </button>
                 </div>
                 <div className="image flex-1 ml-5 ">
                     <img className='w-1/2 ml-auto' src={myImage} alt="" />
