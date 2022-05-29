@@ -52,7 +52,7 @@ const MyPortfolio = () => {
 
             <div className="container mx-auto md:flex my-28 px-10 md:px-0">
                 <div className="custom-width">
-                    {/* <SkillsData></SkillsData> */}
+                    <SkillsData></SkillsData>
                 </div>
                 <div>
                     <h1 className='text-center md:mb-10 md:my-0 my-10 text-uppercase pb-5 text-primary text-4xl md:text-5xl mt-20 font-semibold custom-border-primary w-fit mx-auto'>Sample MERN projects</h1>
