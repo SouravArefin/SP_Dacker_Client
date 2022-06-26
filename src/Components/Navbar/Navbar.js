@@ -95,14 +95,14 @@ const Navbar = () => {
                                     >
                                         Contact
                                     </NavLink>
-                                    <NavLink
+                                    {/* <NavLink
                                         to='/my-portfolio'
                                         className="
                                         font-bold sp-style
                                         nav-btn px-3 py-2 rounded-md text-xl "
                                     >
                                         My-Portfolio
-                                    </NavLink>
+                                    </NavLink> */}
 
                                     {
                                         user &&
@@ -228,12 +228,12 @@ const Navbar = () => {
                                 >
                                     Tools
                                 </NavLink>
-                                <NavLink
+                                {/* <NavLink
                                     to="/my-portfolio"
                                     className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
                                 >
                                     My-Portfolio
-                                </NavLink>
+                                </NavLink> */}
 
 
 

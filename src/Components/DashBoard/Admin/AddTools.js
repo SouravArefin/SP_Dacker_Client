@@ -9,7 +9,7 @@ const AddTools = () => {
 
 
     const imageSotrageKey = `c0749433704e7ac8ba2e6b642a43ad51`
-
+ 
     const handleAddProduct = async data => {
         const image = data.image[0]
         const url = `https://api.imgbb.com/1/upload?key=${imageSotrageKey}`
