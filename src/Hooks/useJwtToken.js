@@ -15,7 +15,7 @@ const useJwtToken = user => {
             const currentUser = { email: email, name: name, img: img }
             // console.log({ email });
             if (email) {
-                fetch(`https://salty-reef-27679.herokuapp.com/user/${email}`, {
+                fetch(`http://localhost:4000/user/${email}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'

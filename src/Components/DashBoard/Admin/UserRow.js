@@ -4,7 +4,7 @@ import noImage from '../../../no-image.png'
 const UserRow = ({ user, index, refetch }) => {
     const { email, role, name, img } = user
     const makeAdmin = () => {
-        fetch(`https://salty-reef-27679.herokuapp.com/user/admin/${email}`, {
+        fetch(`http://localhost:4000/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`

@@ -4,7 +4,7 @@ const useParts = () => {
     const [parts, setParts] = useState([])
     useEffect(() => {
 
-        const url = `https://salty-reef-27679.herokuapp.com/parts`
+        const url = `http://localhost:4000/parts`
         fetch(url)
             .then(res => res.json())
             .then(data => setParts(data))

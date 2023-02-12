@@ -50,7 +50,7 @@ const Purchase = () => {
         }
 
         console.log(userInput);
-        axios.post('https://salty-reef-27679.herokuapp.com/order', userInput)
+        axios.post('http://localhost:4000/order', userInput)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
@@ -62,7 +62,7 @@ const Purchase = () => {
 
     }
     useEffect(() => {
-        fetch(`https://salty-reef-27679.herokuapp.com/parts/${id}`)
+        fetch(`http://localhost:4000/parts/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [id])

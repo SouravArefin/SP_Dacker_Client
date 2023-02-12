@@ -24,7 +24,7 @@ const MyProfile = () => {
     // useEffect(() => {
     const getItems = async () => {
         const email = signedUser?.email
-        const url = `https://salty-reef-27679.herokuapp.com/user/${email}`
+        const url = `http://localhost:4000/user/${email}`
         // console.log(url);
         try {
             const { data } = await axios.get(url, {

@@ -36,7 +36,7 @@ const UpdateTool = () => {
                         image: img
                     }
                     //send data to db
-                    fetch(`https://salty-reef-27679.herokuapp.com/parts/${id}`, {
+                    fetch(`http://localhost:4000/parts/${id}`, {
                         method: 'PATCH',
                         headers: {
                             'content-type': 'application/json',

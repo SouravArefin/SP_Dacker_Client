@@ -6,7 +6,7 @@ import Modal from '../Modal';
 import ManageTable from './ManageTable'
 const ManageOrder = () => {
     const [modal, setModal] = useState({})
-    const { data: allorders, isLoading, refetch } = useQuery('allorders', () => fetch(`https://salty-reef-27679.herokuapp.com/orders`, {
+    const { data: allorders, isLoading, refetch } = useQuery('allorders', () => fetch(`http://localhost:4000/orders`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
@@ -24,7 +24,7 @@ const ManageOrder = () => {
         //     console.log("delete with id", id)
 
 
-        fetch(`https://salty-reef-27679.herokuapp.com/order/${id}`, {
+        fetch(`http://localhost:4000/order/${id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json",

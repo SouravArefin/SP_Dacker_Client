@@ -7,7 +7,7 @@ import ToolCard from './ToolCard';
 
 const ManageTools = () => {
     const [modal, setModal] = useState({})
-    const { data: allParts, isLoading, refetch } = useQuery('allParts', () => fetch(`https://salty-reef-27679.herokuapp.com/parts`, {
+    const { data: allParts, isLoading, refetch } = useQuery('allParts', () => fetch(`http://localhost:4000/parts`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
@@ -27,7 +27,7 @@ const ManageTools = () => {
         //     console.log("delete with id", id)
 
 
-        fetch(`https://salty-reef-27679.herokuapp.com/parts/${id}`, {
+        fetch(`http://localhost:4000/parts/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',

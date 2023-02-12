@@ -17,7 +17,7 @@ const MyOrder = () => {
     const [modal, setModal] = useState({})
 
     const email = user?.email
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://salty-reef-27679.herokuapp.com/singleOrder?email=${email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:4000/singleOrder?email=${email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
@@ -32,7 +32,7 @@ const MyOrder = () => {
 
 
 
-        fetch(`https://salty-reef-27679.herokuapp.com/myorder/${id}`, {
+        fetch(`http://localhost:4000/myorder/${id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json",

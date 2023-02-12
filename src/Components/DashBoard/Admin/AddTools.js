@@ -33,7 +33,7 @@ const AddTools = () => {
                         image: img
                     }
                     //send data to db
-                    fetch(`https://salty-reef-27679.herokuapp.com/parts`, {
+                    fetch(`http://localhost:4000/parts`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
