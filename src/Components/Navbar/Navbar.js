@@ -67,14 +67,14 @@ const Navbar = () => {
                                     >
                                         Home
                                     </NavLink>
-                                    <NavLink
+                                    {/* <NavLink
                                         to="/blog"
                                         className="
                                          sp-style
                                         nav-btn px-3 py-2 rounded-md text-xl font-bold"
                                     >
                                         Blog
-                                    </NavLink>
+                                    </NavLink> */}
                                     <NavLink
                                         to="/parts"
                                         className="
@@ -216,12 +216,12 @@ const Navbar = () => {
 
 
 
-                                <NavLink
+                                {/* <NavLink
                                     to="/blog"
                                     className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"
                                 >
                                     Blog
-                                </NavLink>
+                                </NavLink> */}
                                 <NavLink
                                     to="/parts"
                                     className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md sp-style text-base font-bold"

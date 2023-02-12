@@ -4,7 +4,7 @@ const useParts = () => {
     const [parts, setParts] = useState([])
     useEffect(() => {
 
-        const url = `http://localhost:4000/parts`
+        const url = `https://spdackerserver.up.railway.app/parts`
         fetch(url)
             .then(res => res.json())
             .then(data => setParts(data))

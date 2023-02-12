@@ -18,7 +18,7 @@ export default function App() {
     const copyReview = [...reviewes]
     const reverseReview = copyReview.reverse()
     useEffect(() => {
-        fetch("http://localhost:4000/reviews/")
+        fetch("https://spdackerserver.up.railway.app/reviews/")
             .then(res => res.json())
             .then(res => {
                 setReviewes(res);

@@ -36,7 +36,7 @@ const UpdateTool = () => {
                         image: img
                     }
                     //send data to db
-                    fetch(`http://localhost:4000/parts/${id}`, {
+                    fetch(`https://spdackerserver.up.railway.app/parts/${id}`, {
                         method: 'PATCH',
                         headers: {
                             'content-type': 'application/json',

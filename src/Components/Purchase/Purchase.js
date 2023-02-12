@@ -50,7 +50,7 @@ const Purchase = () => {
         }
 
         console.log(userInput);
-        axios.post('http://localhost:4000/order', userInput)
+        axios.post('https://spdackerserver.up.railway.app/order', userInput)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
@@ -62,7 +62,7 @@ const Purchase = () => {
 
     }
     useEffect(() => {
-        fetch(`http://localhost:4000/parts/${id}`)
+        fetch(`https://spdackerserver.up.railway.app/parts/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [id])

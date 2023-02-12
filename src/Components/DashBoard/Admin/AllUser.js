@@ -8,7 +8,7 @@ import UserRow from './UserRow';
 const AllUser = () => {
 
 
-    const { data: allUsers, isLoading, refetch } = useQuery('allUsers', () => fetch(`http://localhost:4000/user`, {
+    const { data: allUsers, isLoading, refetch } = useQuery('allUsers', () => fetch(`https://spdackerserver.up.railway.app/user`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`

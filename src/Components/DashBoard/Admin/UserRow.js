@@ -4,7 +4,7 @@ import noImage from '../../../no-image.png'
 const UserRow = ({ user, index, refetch }) => {
     const { email, role, name, img } = user
     const makeAdmin = () => {
-        fetch(`http://localhost:4000/user/admin/${email}`, {
+        fetch(`https://spdackerserver.up.railway.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`

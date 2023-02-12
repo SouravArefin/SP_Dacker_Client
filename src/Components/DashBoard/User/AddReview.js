@@ -11,7 +11,7 @@ const AddReview = () => {
     const [customRating, setCustomRating] = React.useState(0);
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const email = user?.email
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:4000/singleOrder?email=${email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://spdackerserver.up.railway.app/singleOrder?email=${email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
@@ -28,7 +28,7 @@ const AddReview = () => {
             toast.error(`Dear ${user.displayName} .Please,at least order one product for giving review`)
         }
         else {
-            fetch('http://localhost:4000/review/', {
+            fetch('https://spdackerserver.up.railway.app/review/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

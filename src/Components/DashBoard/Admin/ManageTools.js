@@ -7,7 +7,7 @@ import ToolCard from './ToolCard';
 
 const ManageTools = () => {
     const [modal, setModal] = useState({})
-    const { data: allParts, isLoading, refetch } = useQuery('allParts', () => fetch(`http://localhost:4000/parts`, {
+    const { data: allParts, isLoading, refetch } = useQuery('allParts', () => fetch(`https://spdackerserver.up.railway.app/parts`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
@@ -27,7 +27,7 @@ const ManageTools = () => {
         //     console.log("delete with id", id)
 
 
-        fetch(`http://localhost:4000/parts/${id}`, {
+        fetch(`https://spdackerserver.up.railway.app/parts/${id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json',
