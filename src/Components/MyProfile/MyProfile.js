@@ -24,7 +24,7 @@ const MyProfile = () => {
     // useEffect(() => {
     const getItems = async () => {
         const email = signedUser?.email
-        const url = `https://spdackerserver.up.railway.app/user/${email}`
+        const url = `https://sp-dacker-server.onrender.com/user/${email}`
         // console.log(url);
         try {
             const { data } = await axios.get(url, {

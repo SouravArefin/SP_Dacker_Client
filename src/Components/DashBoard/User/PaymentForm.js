@@ -14,7 +14,7 @@ const PaymentForm = ({ myOrder }) => {
 
     const { _id, price, userName, email } = myOrder;
     useEffect(() => {
-        fetch('https://spdackerserver.up.railway.app/create-payment-intent', {
+        fetch('https://sp-dacker-server.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -77,7 +77,7 @@ const PaymentForm = ({ myOrder }) => {
                 myOrder: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://spdackerserver.up.railway.app/orderPay/${_id}`, {
+            fetch(`https://sp-dacker-server.onrender.com/orderPay/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

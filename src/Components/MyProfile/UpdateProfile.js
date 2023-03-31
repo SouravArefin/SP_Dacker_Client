@@ -14,7 +14,7 @@ const UpdateProfile = () => {
     // console.log(user);
 
     useEffect(() => {
-        fetch(`https://spdackerserver.up.railway.app/user/${authUser?.email}`, {
+        fetch(`https://sp-dacker-server.onrender.com/user/${authUser?.email}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -64,7 +64,7 @@ const UpdateProfile = () => {
                                 "https://foxdogconsultants.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png",
                         };
                         console.log(userInfo);
-                        fetch(`https://spdackerserver.up.railway.app/user/${authUser.email}`, {
+                        fetch(`https://sp-dacker-server.onrender.com/user/${authUser.email}`, {
                             method: "PUT",
                             headers: {
                                 "Content-Type": "application/json",
@@ -102,7 +102,7 @@ const UpdateProfile = () => {
                     "https://foxdogconsultants.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png",
             };
             // console.log(userInfo);
-            fetch(`https://spdackerserver.up.railway.app/user/${authUser.email}`, {
+            fetch(`https://sp-dacker-server.onrender.com/user/${authUser.email}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

@@ -13,7 +13,7 @@ const ManageTable = ({ o, index, refetch, sendEvent, setModal, isLoading }) => {
 
     const [user] = useAuthState(auth)
     const makeShip = () => {
-        fetch(`https://spdackerserver.up.railway.app/ship/${_id}`, {
+        fetch(`https://sp-dacker-server.onrender.com/ship/${_id}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`

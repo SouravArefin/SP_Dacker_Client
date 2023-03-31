@@ -5,7 +5,7 @@ const usePartsDetail = (id) => {
     const [part, setPart] = useState([]);
     useEffect(() => {
 
-        const url = `https://spdackerserver.up.railway.app/parts/${id}`
+        const url = `https://sp-dacker-server.onrender.com/parts/${id}`
         fetch(url)
             .then(response => response.json())
             .then(data => setPart(data))

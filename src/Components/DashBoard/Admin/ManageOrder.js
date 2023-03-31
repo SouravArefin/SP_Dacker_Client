@@ -6,7 +6,7 @@ import Modal from '../Modal';
 import ManageTable from './ManageTable'
 const ManageOrder = () => {
     const [modal, setModal] = useState({})
-    const { data: allorders, isLoading, refetch } = useQuery('allorders', () => fetch(`https://spdackerserver.up.railway.app/orders`, {
+    const { data: allorders, isLoading, refetch } = useQuery('allorders', () => fetch(`https://sp-dacker-server.onrender.com/orders`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
@@ -24,7 +24,7 @@ const ManageOrder = () => {
         //     console.log("delete with id", id)
 
 
-        fetch(`https://spdackerserver.up.railway.app/order/${id}`, {
+        fetch(`https://sp-dacker-server.onrender.com/order/${id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json",

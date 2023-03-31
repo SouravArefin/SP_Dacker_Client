@@ -8,9 +8,10 @@ import PaymentForm from './PaymentForm';
 
 
 const stripePromise = loadStripe('pk_test_51L2AwTJwwiymagdlMjtinyE6b1TRyWjxiDO3RJp3rW6P4K37ymCk36Sh10C6cB6A9o7H9qN8wyS6PjYnZiJ1kJtY00aP10ahqt');
+console.log(stripePromise)
 const Payment = () => {
     const { id } = useParams()
-    const url = `https://spdackerserver.up.railway.app/payment/${id}`
+    const url = `https://sp-dacker-server.onrender.com/payment/${id}`
     const { data: myOrder, refetch, isLoading } = useQuery(['myOrder', id], () => fetch(url, {
         method: 'GET',
         headers: {

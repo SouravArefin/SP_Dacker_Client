@@ -7,7 +7,7 @@ const useAdmin = user => {
         const email = user?.email
 
         if (email) {
-            fetch(`https://spdackerserver.up.railway.app/admin/${email}`, {
+            fetch(`https://sp-dacker-server.onrender.com/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

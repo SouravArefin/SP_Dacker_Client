@@ -17,7 +17,7 @@ const MyOrder = () => {
     const [modal, setModal] = useState({})
 
     const email = user?.email
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://spdackerserver.up.railway.app/singleOrder?email=${email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://sp-dacker-server.onrender.com/singleOrder?email=${email}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('token')}`
@@ -32,7 +32,7 @@ const MyOrder = () => {
 
 
 
-        fetch(`https://spdackerserver.up.railway.app/myorder/${id}`, {
+        fetch(`https://sp-dacker-server.onrender.com/myorder/${id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json",

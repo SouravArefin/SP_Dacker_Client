@@ -36,7 +36,7 @@ const UpdateTool = () => {
                         image: img
                     }
                     //send data to db
-                    fetch(`https://spdackerserver.up.railway.app/parts/${id}`, {
+                    fetch(`https://sp-dacker-server.onrender.com/parts/${id}`, {
                         method: 'PATCH',
                         headers: {
                             'content-type': 'application/json',

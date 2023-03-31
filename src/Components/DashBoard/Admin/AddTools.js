@@ -33,7 +33,7 @@ const AddTools = () => {
                         image: img
                     }
                     //send data to db
-                    fetch(`https://spdackerserver.up.railway.app/parts`, {
+                    fetch(`https://sp-dacker-server.onrender.com/parts`, {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

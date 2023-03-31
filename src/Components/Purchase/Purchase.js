@@ -50,7 +50,7 @@ const Purchase = () => {
         }
 
         console.log(userInput);
-        axios.post('https://spdackerserver.up.railway.app/order', userInput)
+        axios.post('https://sp-dacker-server.onrender.com/order', userInput)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
@@ -62,7 +62,7 @@ const Purchase = () => {
 
     }
     useEffect(() => {
-        fetch(`https://spdackerserver.up.railway.app/parts/${id}`)
+        fetch(`https://sp-dacker-server.onrender.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [id])

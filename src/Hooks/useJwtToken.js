@@ -15,7 +15,7 @@ const useJwtToken = user => {
             const currentUser = { email: email, name: name, img: img }
             // console.log({ email });
             if (email) {
-                fetch(`https://spdackerserver.up.railway.app/user/${email}`, {
+                fetch(`https://sp-dacker-server.onrender.com/user/${email}`, {
                     method: 'PUT',
                     headers: {
                         'content-type': 'application/json'
