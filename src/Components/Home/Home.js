@@ -36,12 +36,14 @@ const Home = () => {
                     : <div>
                         <Banner />
 
-                        {/* // */}
+                        {/* //
+                          <div className="custom-shape-divider-top-1653206227">
+                               <img src={wave} alt="" />
+                            </div>
+                        */}
                         <div className='bg-gradient-to-t from-primary to-secondary'>
 
-                            <div className="custom-shape-divider-top-1653206227">
-                                <img src={wave} alt="" />
-                            </div>
+                          
                             <h1 className='text-uppercase sp-style text-center text-gray-700 text-4xl md:text-5xl '>We Always Try To Give Our Best</h1>
 
                             <div className="business-summery mt-10 pb-10 grid grid-cols-1 md:grid-cols-3 gap-10 container mx-auto">
